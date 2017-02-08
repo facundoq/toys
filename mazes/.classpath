@@ -1,0 +1,21 @@
+<classpath>
+  <classpathentry kind="src" path="src/main/scala"/>
+  <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+  <classpathentry sourcepath="/home/facundoq/.ivy2/cache/org.scala-js/scalajs-library_2.11/srcs/scalajs-library_2.11-0.6.14-sources.jar" kind="lib" path="/home/facundoq/.ivy2/cache/org.scala-js/scalajs-library_2.11/jars/scalajs-library_2.11-0.6.14.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:/home/facundoq/.ivy2/cache/org.scala-js/scalajs-library_2.11/docs/scalajs-library_2.11-0.6.14-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="/home/facundoq/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.11/srcs/scalajs-dom_sjs0.6_2.11-0.9.1-sources.jar" kind="lib" path="/home/facundoq/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.11/jars/scalajs-dom_sjs0.6_2.11-0.9.1.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:/home/facundoq/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.11/docs/scalajs-dom_sjs0.6_2.11-0.9.1-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry sourcepath="/home/facundoq/.ivy2/cache/org.scala-js/scalajs-test-interface_2.11/srcs/scalajs-test-interface_2.11-0.6.14-sources.jar" kind="lib" path="/home/facundoq/.ivy2/cache/org.scala-js/scalajs-test-interface_2.11/jars/scalajs-test-interface_2.11-0.6.14.jar">
+    <attributes>
+      <attribute name="javadoc_location" value="jar:file:/home/facundoq/.ivy2/cache/org.scala-js/scalajs-test-interface_2.11/docs/scalajs-test-interface_2.11-0.6.14-javadoc.jar!/"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="output" path="bin"/>
+</classpath>

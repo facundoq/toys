@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mazing</title>
+  </head>
+  <body style="font-family: mono">
+  
+  
+    
+    <button id="drawMaze" type="button"
+    onclick="mazes.webapp.Main().drawMaze()">Redraw maze</button>
+    
+    
+    <!-- Include Scala.js compiled code -->
+    <script type="text/javascript" src="./target/scala-2.11/mazes-fastopt.js"></script>
+    <!-- Run tutorial.webapp.TutorialApp -->
+    <script type="text/javascript">
+      mazes.webapp.Main().main();
+    </script>
+    
+    
+  </body>
+</html>

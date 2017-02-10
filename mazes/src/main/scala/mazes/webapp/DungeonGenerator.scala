@@ -10,6 +10,22 @@ class Size(var rows: Int, var cols: Int) {
   def count = rows * cols
 }
 
+object Map {
+  sealed trait Tile {
+    
+  def random(): Tile = random(new Random())
+
+  def random(r: Random): Tile = values(r.nextInt(values.length))
+
+  case object Empty extends Tile
+  case object Passage extends Tile
+  case object Wall extends Tile
+  case object Room extends Tile
+  val values = Seq(Empty,Passage,Wall,Room)
+
+  }
+}
+
 abstract class DungeonGenerator(var size: Size) {
   var r = new Random()
   

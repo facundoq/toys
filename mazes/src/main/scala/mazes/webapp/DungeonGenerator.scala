@@ -10,7 +10,7 @@ class Size(var rows: Int, var cols: Int) {
   def count = rows * cols
 }
 
-object Map {
+object Util {
   sealed trait Tile {
     
   def random(): Tile = random(new Random())
@@ -24,6 +24,8 @@ object Map {
   val values = Seq(Empty,Passage,Wall,Room)
 
   }
+  
+  
 }
 
 abstract class DungeonGenerator(var size: Size) {
@@ -33,7 +35,7 @@ abstract class DungeonGenerator(var size: Size) {
   
   def generate: String
 
-  def printArray(a: Array[Array[Int]]): String = {
+  def printArray(a: Matrix[Int]): String = {
     var r = ""
     for (i <- a.indices) {
       for (j <- a(i).indices) {
@@ -43,7 +45,12 @@ abstract class DungeonGenerator(var size: Size) {
     }
     return r
   }
-  def printArray(a: Array[Array[Boolean]]): String = {
+  def printArray(a: Matrix[Boolean]): String = {
+    var inta = a.map(row => row.map(b => if (b) 1 else 0))
+    return printArray(inta)
+  }
+  
+  def printArray(a: Matrix[Util.Tile]): String = {
     var inta = a.map(row => row.map(b => if (b) 1 else 0))
     return printArray(inta)
   }
@@ -101,13 +108,14 @@ class Categorical(var probabilities: List[Float]) extends Distribution {
 
 
 class SimpleMaze(size: Size, var keepDirectionProbability: Float) extends DungeonGenerator(size) {
-
+  type Map = Matrix[Util.Tile]
+  
   class asInt(b: Boolean) {
     def toInt = if (b) 1 else 0
   }
   implicit def convertBooleanToInt(b: Boolean) = new asInt(b)
 
-  def possibleMoves(p:Position,visited:Array[Array[Boolean]]):(Seq[Position],Seq[DirectionVal])={
+  def possibleMoves(p:Position,m:Map ):(Seq[Position],Seq[DirectionVal])={
     
      val validPositionFactor = posiblePositions.map(p => (size.isValid(p) && !visited(p.x)(p.y)) toInt)
      
@@ -115,8 +123,7 @@ class SimpleMaze(size: Size, var keepDirectionProbability: Float) extends Dungeo
   def generate(): String = {
 
     //var tiles = Array.ofDim[Int](size.rows, size.cols)
-    var visited = Array.ofDim[Boolean](size.rows, size.cols)
-    var isWall = Array.ofDim[Boolean](size.rows, size.cols)
+    var map = Array.ofDim[Util.Tile](size.rows, size.cols)
     
     var p = new Position(r.nextInt(size.rows), r.nextInt(size.cols))
     var previousDirection: DirectionVal = Direction.South

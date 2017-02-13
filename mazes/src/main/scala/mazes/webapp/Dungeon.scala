@@ -38,7 +38,7 @@ object Dungeon {
     
     def asciiArt():String={
         this match {
-        case Empty => "░"
+        case Empty => "█" //"░"
         case Passage => "▒"
         case Wall => "█"
         case Room  => "▓"

@@ -8,6 +8,7 @@ import org.scalajs.dom
 import org.scalajs.dom.Element
 import dom.document
 import scala.scalajs.js.annotation.JSExport
+import mazes.webapp.DungeonGenerator.Map
 
 
 object Main extends JSApp {
@@ -18,10 +19,10 @@ object Main extends JSApp {
   }
   
   def generate():String ={
-    var s = new Size(20, 20)
+    var s = (30, 30)
     var randomness = 0.2f;
-    var m = new SimpleMaze(s, randomness)
-    return m.generate()
+    var m = new SimpleMaze(randomness)
+    return dungeonToText(m.generate(s))
   }
   
   @JSExport
@@ -39,6 +40,19 @@ object Main extends JSApp {
     parNode.appendChild(textNode)
     targetNode.appendChild(parNode)
     return parNode
+  }
+    
+  def dungeonToText(d:Map):String={
+    var r = ""
+    
+    for (i <- 0 until d.rows) {
+      for (j <- 0 until d.columns) {
+        r += d(i,j).asciiArt + ""
+      }
+      r += "\n"
+    }
+    return r
+    
   }
 
 }

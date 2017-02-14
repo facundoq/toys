@@ -7,6 +7,8 @@ import scala.collection.mutable.ListBuffer
 import mazes.webapp.DungeonGenerator.Map
 import mazes.webapp.DungeonGenerator.Move
 import mazes.math.Categorical
+import mazes.webapp.DungeonGenerator.Size
+import mazes.webapp.Dungeon.Direction
 
 
 
@@ -14,10 +16,11 @@ object DungeonGenerator{
   //type Matrix[T] = Array[Array[T]]
   type Map = Matrix[Dungeon.Tile]
   type Move = (Position,Dungeon.Direction)
+  type Size=(Int,Int)
 }
-abstract class DungeonGenerator() {
+abstract class DungeonGenerator(var size:Size) {
   var r = new Random()  
-  def generate(size:(Int,Int)): Map
+  def generate(): Map
 }
 
 
@@ -31,7 +34,7 @@ object SimpleMaze{
   implicit def convertBooleanToInt(b: Boolean) = new asInt(b)
   
 }
-class SimpleMaze(var keepDirectionProbability: Float) extends DungeonGenerator() {
+class SimpleMaze(s:Size,var keepDirectionProbability: Float,var restarts:Int) extends DungeonGenerator(s) {
   import mazes.webapp.Position._
   
   implicit def position2tuple(p:Position)= (p.x,p.y)
@@ -49,12 +52,12 @@ class SimpleMaze(var keepDirectionProbability: Float) extends DungeonGenerator()
         return None
       }
       
-      val moveDistribution = new Categorical(moveProbabilities(moves,m).toList)
+      val moveDistribution = new Categorical(moveProbabilities(moves,m,d).toList)
       val moveIndex = moveDistribution.draw()  
       
       return Some(moves(moveIndex))
   }
-  def moveProbabilities(moves:Seq[Move],m:Map):List[Float]={
+  def moveProbabilities(moves:Seq[Move],m:Map,previousDirection:Direction):List[Float]={
           //      val newDirectionProbability = (1 - keepDirectionProbability) / (possiblePositions.length - 1)
       //      
       //      var mantainDirectionFactor = List.fill(Util.Directions.length)(newDirectionProbability)
@@ -62,7 +65,14 @@ class SimpleMaze(var keepDirectionProbability: Float) extends DungeonGenerator()
       //    
       
       //var positionProbabilities = (validPositionFactor, mantainDirectionFactor).zipped.map(_ * _)
+    
       var moveProbabilities= List.fill(moves.length)(1.0f/moves.length)
+      
+      val previousDirectionIndex=moves indexWhere ({ m => m._2==previousDirection })
+      if (previousDirectionIndex != -1){
+        val newProbability=moveProbabilities(previousDirectionIndex)*keepDirectionProbability
+        moveProbabilities=moveProbabilities.updated(previousDirectionIndex,newProbability)
+      }
       val totalProbability = moveProbabilities.sum
 
       moveProbabilities = moveProbabilities.map(_ / totalProbability)
@@ -84,7 +94,7 @@ class SimpleMaze(var keepDirectionProbability: Float) extends DungeonGenerator()
   }
   
   
-  def generate(size:(Int,Int)): Map = {
+  def generate(): Map = {
     var map:Map=Matrix(size,Dungeon.Empty)
 
     var p = Position(map.randomIndex(r))
@@ -94,9 +104,9 @@ class SimpleMaze(var keepDirectionProbability: Float) extends DungeonGenerator()
     var path=ListBuffer(p)
     var direction=ListBuffer(d)
     var i=0
-    val maxRestarts=20
-    while (i<maxRestarts) {
-       println(i+ "/"+ maxRestarts+ " -> " + p)
+    
+    while (i<restarts) {
+       println(i+ "/"+ restarts+ " -> " + p)
        updateWall(p,map)
        carvePassage(map, d, p) match {
        case None=> {
@@ -105,7 +115,7 @@ class SimpleMaze(var keepDirectionProbability: Float) extends DungeonGenerator()
           path.remove(path.length-1)
           direction.remove(path.length-1)
           if (path.isEmpty){
-            i==maxRestarts
+            i==restarts
           }else{
             i+=1
             p=path.last

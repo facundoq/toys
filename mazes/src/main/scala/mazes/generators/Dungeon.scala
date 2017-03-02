@@ -1,4 +1,4 @@
-package mazes.webapp
+package mazes.generators
 
 import scala.util.Random
 
@@ -8,7 +8,7 @@ object Position{
   def apply(r:Random) = new Position(r.nextInt(),r.nextInt())
   def apply(t:(Int,Int))=new Position(t._1,t._2)
   def apply(x:Int,y:Int)=new Position(x,y)
-  
+  def apply()=new Position(0,0)
   
   
 }
@@ -39,9 +39,9 @@ object Dungeon {
     def asciiArt():String={
         this match {
         case Empty => "█" //"░"
-        case Passage => "▒"
+        case Passage => " "
         case Wall => "█"
-        case Room  => "▓"
+        case Room  => "▒"
       }
     }
     

@@ -1,9 +1,10 @@
-package mazes.webapp
+package mazes.generators
 
-
-import scala.collection.mutable.Cloneable
 import scala.collection.mutable.ArraySeq
 import scala.util.Random
+import scala.Iterator
+import scala.collection.TraversableOnce.flattenTraversableOnce
+import scala.math.BigInt.int2bigInt
 
 /**
  * Interface for the MatrixMultiply object; used to automatically infer type arguments to "*" and "^".

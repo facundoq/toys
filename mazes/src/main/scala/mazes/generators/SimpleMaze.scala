@@ -1,30 +1,11 @@
-package mazes.webapp
+package mazes.generators
 
-import scala.util.Random
-
-import scala.util.control.Breaks._
-import scala.collection.mutable.ListBuffer
-import mazes.webapp.DungeonGenerator.Map
-import mazes.webapp.DungeonGenerator.Move
+import mazes.generators.DungeonGenerator.Size
+import mazes.generators.DungeonGenerator.Map
+import mazes.generators.DungeonGenerator.Move
 import mazes.math.Categorical
-import mazes.webapp.DungeonGenerator.Size
-import mazes.webapp.Dungeon.Direction
-
-
-
-object DungeonGenerator{
-  //type Matrix[T] = Array[Array[T]]
-  type Map = Matrix[Dungeon.Tile]
-  type Move = (Position,Dungeon.Direction)
-  type Size=(Int,Int)
-}
-abstract class DungeonGenerator(var size:Size) {
-  var r = new Random()  
-  def generate(): Map
-}
-
-
-// pimpmylib http://stackoverflow.com/questions/2633719/is-there-an-easy-way-to-convert-a-boolean-to-an-integer
+import mazes.generators.Dungeon.Direction
+import scala.collection.mutable.ListBuffer
 
 
 object SimpleMaze{
@@ -34,8 +15,11 @@ object SimpleMaze{
   implicit def convertBooleanToInt(b: Boolean) = new asInt(b)
   
 }
+
+
+
 class SimpleMaze(s:Size,var keepDirectionProbability: Float,var restarts:Int) extends DungeonGenerator(s) {
-  import mazes.webapp.Position._
+  import mazes.generators.Position._
   
   implicit def position2tuple(p:Position)= (p.x,p.y)
   
@@ -139,3 +123,4 @@ class SimpleMaze(s:Size,var keepDirectionProbability: Float,var restarts:Int) ex
   }
 
 }
+

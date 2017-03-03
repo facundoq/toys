@@ -20,7 +20,7 @@ object Main extends JSApp {
   def main(): Unit = {
     val ui=new RecursiveMazeUI(document.body)
     ui.setupUI()
-    ui.drawMaze()
+    //ui.drawMaze()
     
   }
   

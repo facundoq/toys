@@ -11,6 +11,8 @@ import scalatags.JsDom.all._
 import mazes.generators.DungeonGenerator.Size
 import org.scalajs.dom.html._
 import mazes.generators.RecursiveMaze
+import scala.scalajs.js.timers.SetTimeoutHandle
+import scala.scalajs.js.timers._
 
 class RecursiveMazeUI(base: HTMLElement) extends DungeonUI {
 
@@ -21,23 +23,26 @@ class RecursiveMazeUI(base: HTMLElement) extends DungeonUI {
   var widthInput: Input = null
   var minSideLength: Input = null
 
+  var m: RecursiveMaze = null
+
   def setupUI() {
     minArea = input(
       `type` := "text",
       value := "10").render
     heightInput = input(
       `type` := "text",
-      value := "40").render
+      value := "50").render
     widthInput = input(
       `type` := "text",
-      value := "80").render
+      value := "120").render
     minSideLength = input(
       `type` := "text",
-      value := "3").render
+      value := "5").render
     drawMazeButton = button("Redraw maze").render
     drawMazeButton.onclick = (e: dom.MouseEvent) => drawMaze()
 
     mazeElement = pre("").render
+    val mazeElementDiv= div(mazeElement).render
     this.base.appendChild(
       div(
         h1("Maze Generator"),
@@ -46,19 +51,37 @@ class RecursiveMazeUI(base: HTMLElement) extends DungeonUI {
         div(label("minArea:"), minArea),
         div(label("minSideLength:"), minSideLength),
         div(drawMazeButton),
-        div(mazeElement)).render)
+        mazeElementDiv).render)
+    recreateMaze()
+    
+    
+//    mazeElementDiv.onclick = (e:dom.MouseEvent) => step()
+//    step()
+    setInterval(200) {
+      step()
+    }
   }
 
-  
-  def drawMaze(){
-
+  def step(){
+    if (!m.stack.isEmpty) {
+        m.addWall()
+        mazeElement.textContent = dungeonToText(m.map)
+    }
+  }
+  def recreateMaze() {
     val s = (heightInput.value.toInt, widthInput.value.toInt)
     val minAreaVal = minArea.value.toInt;
     val minSideLengthVal = minSideLength.value.toInt;
 
-    var m = new RecursiveMaze(s,minAreaVal,minSideLengthVal)
+    m = new RecursiveMaze(s, minAreaVal, minSideLengthVal)
+  }
+  
+  def drawMaze() {
 
-    mazeElement.textContent = dungeonToText(m.generate())
+    //org.scalajs.dom.setTimeout(() => {},100)
+
+    //org.scalajs.dom.setInterval(() =>{ } , 100)
+    recreateMaze()
   }
 
 }

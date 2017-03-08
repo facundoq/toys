@@ -14,7 +14,7 @@ import mazes.generators.RecursiveMaze
 import scala.scalajs.js.timers.SetTimeoutHandle
 import scala.scalajs.js.timers._
 
-class RecursiveMazeUI(base: HTMLElement) extends DungeonUI {
+class RecursiveMazeUI(base: Element,speed:Int) extends DungeonUI(base,speed) {
 
   var mazeElement: Element = null
   var drawMazeButton: Button = null
@@ -28,60 +28,57 @@ class RecursiveMazeUI(base: HTMLElement) extends DungeonUI {
   def setupUI() {
     minArea = input(
       `type` := "text",
-      value := "10").render
+      value := "9").render
     heightInput = input(
       `type` := "text",
-      value := "50").render
+      value := "20").render
     widthInput = input(
       `type` := "text",
-      value := "120").render
+      value := "80").render
     minSideLength = input(
       `type` := "text",
-      value := "5").render
+      value := "3").render
     drawMazeButton = button("Redraw maze").render
-    drawMazeButton.onclick = (e: dom.MouseEvent) => drawMaze()
+    drawMazeButton.onclick = (e: dom.MouseEvent) => resetMaze()
 
     mazeElement = pre("").render
     val mazeElementDiv= div(mazeElement).render
     this.base.appendChild(
       div(
-        h1("Maze Generator"),
         div(label("Width:"), widthInput),
         div(label("Height:"), heightInput),
-        div(label("minArea:"), minArea),
-        div(label("minSideLength:"), minSideLength),
+        div(label("minArea(useless):"), minArea),
+        div(label("minSideLength (min 3):"), minSideLength),
         div(drawMazeButton),
         mazeElementDiv).render)
-    recreateMaze()
+    resetMaze()
     
     
 //    mazeElementDiv.onclick = (e:dom.MouseEvent) => step()
 //    step()
-    setInterval(200) {
+    setInterval(speed) {
       step()
     }
   }
 
   def step(){
-    if (!m.stack.isEmpty) {
-        m.addWall()
-        mazeElement.textContent = dungeonToText(m.map)
+    if (!m.finished) {
+        m.addWall
+        drawMaze    
     }
   }
   def recreateMaze() {
     val s = (heightInput.value.toInt, widthInput.value.toInt)
-    val minAreaVal = minArea.value.toInt;
+    
     val minSideLengthVal = minSideLength.value.toInt;
-
-    m = new RecursiveMaze(s, minAreaVal, minSideLengthVal)
+    
+    m = new RecursiveMaze(s, minSideLengthVal)
   }
+  def drawMaze(){mazeElement.textContent = dungeonToText(m.map)}
   
-  def drawMaze() {
-
-    //org.scalajs.dom.setTimeout(() => {},100)
-
-    //org.scalajs.dom.setInterval(() =>{ } , 100)
-    recreateMaze()
+  def resetMaze(){
+    recreateMaze
+    drawMaze
   }
 
 }

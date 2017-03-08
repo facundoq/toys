@@ -10,56 +10,79 @@ import mazes.generators.DungeonGenerator.Map
 import scalatags.JsDom.all._
 import mazes.generators.DungeonGenerator.Size
 import org.scalajs.dom.html._
+import scala.scalajs.js.timers._
+import mazes.generators.BacktrackingMaze
 
-import mazes.generators.SimpleMaze
-
-class SimpleMazeUI(base: HTMLElement) extends DungeonUI {
+class BacktrackingMazeUI(base: Element,speed:Int) extends DungeonUI(base,speed) {
 
   var mazeElement: Element = null
   var drawMazeButton: Button = null
   var keepDirectionInput: Input = null
   var heightInput: Input = null
   var widthInput: Input = null
-  var restartsInput: Input = null
+  var maxBacktracksInput: Input = null
 
+  var m: BacktrackingMaze = null
+  var h:SetIntervalHandle=null
+  
+  val defaultSize= (20,80)
+  val defaultMaxBacktracks=Seq(defaultSize._1,defaultSize._2).max*2
   def setupUI() = {
     keepDirectionInput = input(
       `type` := "text",
       value := "1").render
     heightInput = input(
       `type` := "text",
-      value := "20").render
+      value := defaultSize._1.toString).render
     widthInput = input(
       `type` := "text",
-      value := "80").render
-    restartsInput = input(
+      value := defaultSize._2.toString ).render
+    maxBacktracksInput = input(
       `type` := "text",
-      value := "20").render
+      value := defaultMaxBacktracks.toString).render
     drawMazeButton = button("Redraw maze").render
-    drawMazeButton.onclick = (e: dom.MouseEvent) => drawMaze()
+    drawMazeButton.onclick = (e: dom.MouseEvent) => resetMaze()
 
     mazeElement = pre("").render
     this.base.appendChild(
       div(
-        h1("Maze Generator"),
         div(label("Width:"), widthInput),
         div(label("Height:"), heightInput),
         div(label("KeepDirection:"), keepDirectionInput),
-        div(label("Restarts:"), restartsInput),
+        div(label("maxBacktracks:"), maxBacktracksInput),
         div(drawMazeButton),
         div(mazeElement)).render)
+    resetMaze
+    
+    
+    
   }
 
+  def step() {
+    if (!m.finished){
+      m.step()
+      drawMaze
+    }else{
+      clearInterval(h)
+    }
+  }
   
-  def drawMaze(): Unit = {
-
+  def resetMaze() {
+    recreateMaze
+    drawMaze
+    h = setInterval(speed) {
+      step()
+    }
+  }
+  def recreateMaze() {
     val s = (heightInput.value.toInt, widthInput.value.toInt)
     val keepDirection = keepDirectionInput.value.toFloat;
-    val restarts = restartsInput.value.toInt;
+    val maxBacktracks = maxBacktracksInput.value.toInt;
 
-    var m = new SimpleMaze(s, keepDirection, restarts)
-
-    mazeElement.textContent = dungeonToText(m.generate())
+    m = new BacktrackingMaze(s, keepDirection, maxBacktracks)
+  }
+  def drawMaze() {
+    mazeElement.textContent = dungeonToText(m.map)
   }
 
 }

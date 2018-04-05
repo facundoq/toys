@@ -1,0 +1,1 @@
+tsc -w main.ts

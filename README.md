@@ -1,7 +1,8 @@
 # toys
 
-Toy programming projects
+Small programming projects
 
+* actions-view: Typescript app to visualize Kinect-like gesture/action databases, using d3 for plotting, jquery ui for layout, and jade for templating. [Demo](http://facundoq.github.io/action-view/)
 * cic-fly: A small python app to analyze fruit fly heartbeats through fluorescence images. Using PIL, numpy, scipy, tkinker. 
 * crappy-dbms:   A toy relational dbms with pessimistic concurrency control, in Java 
 * dft: various toy dft implementations in matlab with slides

@@ -1,0 +1,7 @@
+C:\Users\aspire\Downloads\facu\actions-view\jquery.d.ts
+C:\Users\aspire\Downloads\facu\actions-view\main.ts
+C:\Users\aspire\Downloads\facu\actions-view\three.d.ts
+C:\Users\aspire\Downloads\facu\actions-view\lib\jquery.d.ts
+C:\Users\aspire\Downloads\facu\actions-view\lib\three.d.ts
+C:\Users\aspire\Downloads\facu\actions-view\model\Skeleton.ts
+C:\Users\aspire\Downloads\facu\actions-view\three\THREE.ts

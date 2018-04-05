@@ -1,0 +1,10 @@
+ <!--
+  <xs:element name="frame"> <xs:complexType> <xs:sequence> <xs:element
+  name="imageName" type="xs:string" /> <xs:element name="percentage"
+  type="xs:string" /> </xs:sequence> </xs:complexType> </xs:element>
+
+  <xs:element name="animation"> <xs:complexType> <xs:sequence>
+  <xs:element name="loops" type="xs:string" /> <xs:element ref="frame"
+  minOccurs="1" maxOccurs="unbounded" /> </xs:sequence>
+  </xs:complexType> </xs:element>
+ -->

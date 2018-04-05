@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE animation [
+  <!ELEMENT animation (loops,frame+)>
+    <!ELEMENT loops (#CDATA)>
+    <!ELEMENT frame      (imageName,percentage)>
+      <!ELEMENT imageName      (#CDATA)>
+      <!ELEMENT percentage    (#CDATA)>
+
+]>

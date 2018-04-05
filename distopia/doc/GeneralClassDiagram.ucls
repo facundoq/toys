@@ -1,0 +1,515 @@
+<class-diagram icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" version="0.9.65">  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="false" private="false"/>    
+    <operations public="true" package="true" protected="false" private="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>  
+  <class language="java" name="org.tiledzelda.main.GameCore" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/GameCore.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="359" y="206" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.GameEntities" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/GameEntities.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="516" y="376" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.GameInitializer" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/GameInitializer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="129" y="128" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.Main" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="357" y="33" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.logic.TimeKeeper" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/logic/TimeKeeper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="871" y="169" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.logic.RandomNumberGenerator" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/logic/RandomNumberGenerator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="623" y="159" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.logic.FPSCounter" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/logic/FPSCounter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="678" y="297" width="140" height="86"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.resourcemanagement.ImageManager" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/resourcemanagement/ImageManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="113" y="522" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.main.resourcemanagement.Configuration" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/main/resourcemanagement/Configuration.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="107" y="344" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.AbstractTileMap" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/AbstractTileMap.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="578" y="662" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.LimboTileMap" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/LimboTileMap.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="663" y="1003" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.MapTeleporter" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/MapTeleporter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="125" y="930" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.TileMap" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/TileMap.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="399" y="1027" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.Area" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Area.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="435" y="1312" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.AreaIteratorLeftRightUpDown" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/AreaIteratorLeftRightUpDown.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="808" y="1215" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.Direction" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Direction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="156" y="1149" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.DirectionCache" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/DirectionCache.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="121" y="1382" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.Distance" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Distance.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="329" y="1560" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.Position" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Position.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="725" y="1515" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.map.maputils.PositionCache" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/map/maputils/PositionCache.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="1057" y="1432" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.entities.FloorCell" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="1481" y="1365" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.entities.GameEntity" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/entities/GameEntity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="1358" y="932" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.entities.NullElement" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/entities/NullElement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="1570" y="1070" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.visualization.elementgraphics.NullElementGraphic" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/visualization/elementgraphics/NullElementGraphic.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="2583" y="1117" width="-1" height="-1"/>  
+  </class>  
+  <class language="java" name="org.tiledzelda.model.entities.NullFloorCell" project="TiledZelda" 
+    file="/TiledZelda/src/org/tiledzelda/model/entities/NullFloorCell.java" binary="false" corner="BOTTOM_RIGHT">    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="false" private="false"/>    
+    </display>    
+    <position x="1671" y="1279" width="-1" height="-1"/>  
+  </class>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Area" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Area.java" binary="false">      
+      <attribute name="from"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Position" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Position.java" binary="false"/>  
+  </association>  
+  <generalization>    
+    <source project="TiledZelda" name="org.tiledzelda.model.map.LimboTileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/LimboTileMap.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.map.AbstractTileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/AbstractTileMap.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.resourcemanagement.ImageManager" 
+      file="/TiledZelda/src/org/tiledzelda/main/resourcemanagement/ImageManager.java" binary="false">      
+      <attribute name="imageManager"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.resourcemanagement.ImageManager" 
+      file="/TiledZelda/src/org/tiledzelda/main/resourcemanagement/ImageManager.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.GameEntities" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameEntities.java" binary="false">      
+      <attribute name="floorCells"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.resourcemanagement.Configuration" 
+      file="/TiledZelda/src/org/tiledzelda/main/resourcemanagement/Configuration.java" binary="false">      
+      <attribute name="configuration"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.resourcemanagement.Configuration" 
+      file="/TiledZelda/src/org/tiledzelda/main/resourcemanagement/Configuration.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.logic.TimeKeeper" 
+      file="/TiledZelda/src/org/tiledzelda/main/logic/TimeKeeper.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.logic.TimeKeeper" 
+      file="/TiledZelda/src/org/tiledzelda/main/logic/TimeKeeper.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.DirectionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/DirectionCache.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.DirectionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/DirectionCache.java" binary="false"/>  
+  </association>  
+  <generalization>    
+    <source project="TiledZelda" name="org.tiledzelda.model.map.TileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/TileMap.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.map.AbstractTileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/AbstractTileMap.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.PositionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/PositionCache.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.PositionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/PositionCache.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Area" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Area.java" binary="false">      
+      <attribute name="to"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Position" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Position.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.entities.NullElement" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullElement.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.entities.NullElement" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullElement.java" binary="false"/>  
+  </association>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.main.GameEntities" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameEntities.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>  
+  </dependency>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.AreaIteratorLeftRightUpDown" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/AreaIteratorLeftRightUpDown.java" binary="false">      
+      <attribute name="area"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Area" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Area.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.logic.FPSCounter" 
+      file="/TiledZelda/src/org/tiledzelda/main/logic/FPSCounter.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.logic.FPSCounter" 
+      file="/TiledZelda/src/org/tiledzelda/main/logic/FPSCounter.java" binary="false"/>  
+  </association>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.model.map.TileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/TileMap.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>  
+  </dependency>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.LimboTileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/LimboTileMap.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.LimboTileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/LimboTileMap.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.entities.NullElement" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullElement.java" binary="false">      
+      <attribute name="nullElementGraphic"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.visualization.elementgraphics.NullElementGraphic" 
+      file="/TiledZelda/src/org/tiledzelda/visualization/elementgraphics/NullElementGraphic.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.entities.NullFloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullFloorCell.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.entities.NullFloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullFloorCell.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.MapTeleporter" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/MapTeleporter.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.MapTeleporter" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/MapTeleporter.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.GameCore" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameCore.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.GameCore" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameCore.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.logic.RandomNumberGenerator" 
+      file="/TiledZelda/src/org/tiledzelda/main/logic/RandomNumberGenerator.java" binary="false">      
+      <attribute name="randomNumberGenerator"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.logic.RandomNumberGenerator" 
+      file="/TiledZelda/src/org/tiledzelda/main/logic/RandomNumberGenerator.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.GameEntities" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameEntities.java" binary="false">      
+      <attribute name="instance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.main.GameEntities" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameEntities.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.PositionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/PositionCache.java" binary="false">      
+      <attribute name="positions"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Position" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Position.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Position" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Position.java" binary="false">      
+      <attribute name="positionCache"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.PositionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/PositionCache.java" binary="false"/>  
+  </association>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.model.entities.NullElement" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullElement.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.visualization.elementgraphics.NullElementGraphic" 
+      file="/TiledZelda/src/org/tiledzelda/visualization/elementgraphics/NullElementGraphic.java" binary="false"/>  
+  </dependency>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.GameCore" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameCore.java" binary="false">      
+      <attribute name="mainMap"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.TileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/TileMap.java" binary="false"/>  
+  </association>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.entities.GameEntity" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/GameEntity.java" binary="false"/>  
+  </dependency>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.TileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/TileMap.java" binary="false">      
+      <attribute name="floorLayer"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.AreaIteratorLeftRightUpDown" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/AreaIteratorLeftRightUpDown.java" binary="false">      
+      <attribute name="currentPosition"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Position" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Position.java" binary="false"/>  
+  </association>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.model.map.AbstractTileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/AbstractTileMap.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.entities.GameEntity" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/GameEntity.java" binary="false"/>  
+  </dependency>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.main.GameEntities" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameEntities.java" binary="false">      
+      <attribute name="tileMaps"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.TileMap" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/TileMap.java" binary="false"/>  
+  </association>  
+  <association>    
+    <display labels="true" multiplicity="true"/>    
+    <source navigable="false" project="TiledZelda" name="org.tiledzelda.model.map.maputils.DirectionCache" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/DirectionCache.java" binary="false">      
+      <attribute name="directions"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target navigable="true" project="TiledZelda" name="org.tiledzelda.model.map.maputils.Direction" 
+      file="/TiledZelda/src/org/tiledzelda/model/map/maputils/Direction.java" binary="false"/>  
+  </association>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.model.entities.NullFloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/NullFloorCell.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>  
+  </dependency>  
+  <dependency>    
+    <source project="TiledZelda" name="org.tiledzelda.main.GameInitializer" 
+      file="/TiledZelda/src/org/tiledzelda/main/GameInitializer.java" binary="false"/>    
+    <target project="TiledZelda" name="org.tiledzelda.model.entities.FloorCell" 
+      file="/TiledZelda/src/org/tiledzelda/model/entities/FloorCell.java" binary="false"/>  
+  </dependency>
+</class-diagram>

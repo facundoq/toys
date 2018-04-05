@@ -1,0 +1,19 @@
+[AI]
+type=following
+typesReactiveTo=monster.green,monster.yellow,monster.blueGreen,player
+
+[ElementGraphic]
+graphic=monster.red
+graphicIsSimple=true
+
+[ElementType]
+damage=5
+damageReduction=1
+staminaHitCost=5
+chanceToHit= 90
+chanceToDodge= 3
+baseSpeed = 320
+maxHealth=50
+maxStamina=30
+healthRestorationRate= 400
+staminaRestorationRate= 400

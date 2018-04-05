@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="TiledZelda/tiledZelda.jar"/>
+    <options buildIfNeeded="true" compress="false" descriptionLocation="/TiledZelda/tiledZelda.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" mainClassHandleIdentifier="=TiledZelda/src&lt;org.tiledzelda.main{Main.java[Main" manifestLocation="/TiledZelda/tiledZelda.manifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <folder path="/TiledZelda/configuration"/>
+        <folder path="/TiledZelda/resources"/>
+        <javaElement handleIdentifier="=TiledZelda/test"/>
+        <file path="/TiledZelda/.project"/>
+        <file path="/TiledZelda/.classpath"/>
+        <javaElement handleIdentifier="=TiledZelda/src"/>
+    </selectedElements>
+    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
+</jardesc>

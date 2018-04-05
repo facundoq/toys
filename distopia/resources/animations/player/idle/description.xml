@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<animation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<loops>false</loops>
+	<frame>
+		<imageName>1.png</imageName>
+		<percentage>100</percentage>
+	</frame>
+</animation>

@@ -1,0 +1,19 @@
+[AI]
+type=escaping
+typesReactiveTo=player,monster.red,monster.green,monster.yellow
+
+[ElementGraphic]
+graphic=monster.green
+graphicIsSimple=true
+
+[ElementType]
+damage=30
+damageReduction=0
+staminaHitCost= 15
+chanceToHit= 80
+chanceToDodge= 3
+baseSpeed = 100
+maxHealth=10
+maxStamina=50
+healthRestorationRate= 200
+staminaRestorationRate= 150

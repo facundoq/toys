@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>distopia</groupId>
+  <artifactId>distopia</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source/>
+          <target/>
+        </configuration>
+      </plugin>
+   <plugin>
+    <groupid>org.dstovall</groupid>
+    <artifactid>onejar-maven-plugin</artifactid>
+    <version>1.4.4</version>
+    <executions>
+        <execution>
+            <configuration>
+                <onejarversion>0.97</onejarversion>
+                <classifier>onejar</classifier>
+            </configuration>
+            <goals>
+                <goal>one-jar</goal>
+            </goals>
+        </execution>
+   </executions>
+</plugin>
+ </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.ini4j</groupId>
+  		<artifactId>ini4j</artifactId>
+  		<version>0.5.2</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.media</groupId>
+  		<artifactId>jmf</artifactId>
+  		<version>2.1.1e</version>
+  	</dependency>
+  	<dependency>
+  <groupId>commons-io</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>2.4</version>
+</dependency>
+
+  	<dependency>
+  		<groupId>com.googlecode.soundlibs</groupId>
+  		<artifactId>mp3spi</artifactId>
+  		<version>1.9.5-1</version>
+  	</dependency>
+  </dependencies>
+  
+  <pluginrepositories>
+    <pluginrepository>
+        <id>onejar-maven-plugin.googlecode.com</id>
+        <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
+    </pluginrepository>
+</pluginrepositories>
+  
+</project>

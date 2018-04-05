@@ -1,0 +1,6 @@
+Pkg.add("AffineTransforms")
+Pkg.add("ImageMagick")
+Pkg.add("Images")
+Pkg.add("Colors")
+Pkg.add("ColorTypes")
+Pkg.add("ColorVectorSpace")

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<animation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<loops>false</loops>
+	<frame>
+		<imageName>1.png</imageName>
+		<percentage>16</percentage>
+	</frame>
+	<frame>
+		<imageName>2.png</imageName>
+		<percentage>17</percentage>
+	</frame>
+<frame>
+		<imageName>3.png</imageName>
+		<percentage>17</percentage>
+	</frame>
+<frame>
+		<imageName>4.png</imageName>
+		<percentage>17</percentage>
+	</frame>
+<frame>
+		<imageName>5.png</imageName>
+		<percentage>17</percentage>
+	</frame>
+<frame>
+		<imageName>6.png</imageName>
+		<percentage>16</percentage>
+	</frame>
+</animation>

@@ -1,0 +1,9 @@
+valores promedio finales de 
+2dls
+
+amplitud: 4.00 UA resulta de (F-F0)/F0
+tiempo total: 380 ms
+t1/2: 100 ms
+
+
+

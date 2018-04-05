@@ -2,15 +2,21 @@ package mazes.math
 
 import scala.util.Random
 
-abstract class Distribution {
-  def draw(): Int
+abstract class Distribution[T] {
+  def draw(): T
 }
 
-class Categorical(var probabilities: List[Float]) extends Distribution {
+class Categorical(var probabilities: List[Float]) extends Distribution[Int] {
 
-  def draw(): Int = {
+  def draw()= {
     var cumulativeProbabilities = probabilities.scanLeft(0f)(_ + _)
     var p = new Random().nextFloat()
-    return cumulativeProbabilities.indexWhere(_ > p)-1
+    cumulativeProbabilities.indexWhere(_ > p)-1
   }
+}
+
+class Normal(val u:Double,val std:Double) extends Distribution[Double]{
+  
+  def draw()= new Random().nextDouble()*std+u
+  
 }

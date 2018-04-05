@@ -1,0 +1,83 @@
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosnolineal
+\draw[thick,color=black] (axis cs:-4,-10) -- (axis cs:2,10);
+\draw[thick,color=black] (axis cs:-10,-2.5) -- (axis cs:10,2.5);
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosnolineal
+\draw[thick,color=surface] (axis cs:-4,-10) --
+ (axis cs:2,10);
+\draw[thick,color=surface] (axis cs:-10,-2.5) -- 
+(axis cs:10,2.5);
+\node[color=surface] at (axis cs:4,2.5) {\huge{+}};
+\node[color=surface] at (axis cs:-3.5,-4.5) {\huge{+}};
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosnolineal
+\draw[thick,color=black] (axis cs:-4,-10) -- (axis cs:2,10);
+\draw[thick,color=black] (axis cs:-10,-2.5) -- (axis cs:10,2.5);
+\node[color=surface] at (axis cs:0,0) {\huge{+}};
+\addplot[samples=50,domain=-3.6:6,thick,color=surface] 
+{(ln(x+4)*3-5)};
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\centering
+\input{tikz/neurona_perceptron_nolineal}
+
+\vspace{-35px}
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+\vspace{70px}
+\begin{block}{ \centering $S$ es \textbf{no lineal}}
+\centering
+\pause
+Generalmente una sigmoide $\rightarrow$
+\end{block}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\resizebox{0.75\textwidth}{!}{
+
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={x},ylabel={S(x)}]
+\addplot[samples=50,domain=-10:10,thick] 
+{ 1/(1+e^(-x)) };
+\end{axis}
+\end{tikzpicture}
+}
+\end{column}
+
+\end{columns}
+\end{myframe}

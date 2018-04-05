@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="FlightReservationsServer/frs.jar"/>
+    <options buildIfNeeded="true" compress="false" descriptionLocation="/FlightReservationsServer/frs.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" mainClassHandleIdentifier="=FlightReservationsServer/src&lt;org.flightreservationsserver.main{Main.java[Main" manifestLocation="/FlightReservationsServer/manifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/CrappyDBMS/.project"/>
+        <file path="/FlightReservationsServer/.classpath"/>
+        <file path="/CrappyDBMS/build.xml"/>
+        <javaElement handleIdentifier="=FlightReservationsServer/test"/>
+        <file path="/FlightReservationsServer/server.policy"/>
+        <file path="/FlightReservationsServer/.project"/>
+        <javaElement handleIdentifier="=FlightReservationsServerInterface"/>
+        <file path="/CrappyDBMS/.classpath"/>
+        <javaElement handleIdentifier="=FlightReservationsServer/src"/>
+        <javaElement handleIdentifier="=CrappyDBMS/src"/>
+    </selectedElements>
+    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
+</jardesc>

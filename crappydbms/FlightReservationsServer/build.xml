@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="FlightReservationsServer">
+    <property environment="env"/>
+    <property name="FlightReservationsServerInterface.location" value="../FlightReservationsServerInterface"/>
+    <property name="CrappyDBMS.location" value="../CrappyDBMS"/>
+    <property name="ECLIPSE_HOME" value="../../../../../home/facuq/programs/eclipse3.4J2EE/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.junit4_4.3.1/junit.jar"/>
+    </path>
+    <path id="CrappyDBMS.classpath">
+        <pathelement location="${CrappyDBMS.location}/bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <path id="FlightReservationsServerInterface.classpath">
+        <pathelement location="${FlightReservationsServerInterface.location}/bin"/>
+    </path>
+    <path id="FlightReservationsServer.classpath">
+        <pathelement location="bin"/>
+        <path refid="CrappyDBMS.classpath"/>
+        <path refid="FlightReservationsServerInterface.classpath"/>
+        <pathelement location="${FlightReservationsServerInterface.location}/frsi.jar"/>
+        <pathelement location="${CrappyDBMS.location}/crappyDBMS.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.testsuite, **/*.deploy, **/*.location, **/*.execution, **/*.datapool, **/*.artifact, **/*.testlog, **/*.xml, **/*.html, **/*.svg, **/*.java"/>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test" excludes="**/*.launch, **/*.testsuite, **/*.deploy, **/*.location, **/*.execution, **/*.datapool, **/*.artifact, **/*.testlog, **/*.xml, **/*.html, **/*.svg, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="${CrappyDBMS.location}/build.xml" inheritAll="false" target="clean"/>
+        <ant antfile="${FlightReservationsServerInterface.location}/build.xml" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="${CrappyDBMS.location}/build.xml" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+        <ant antfile="${FlightReservationsServerInterface.location}/build.xml" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="FlightReservationsServer.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="test"/>
+            <classpath refid="FlightReservationsServer.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="FLightReservationsServerMain">
+        <java classname="org.flightreservationsserver.main.Main" failonerror="true" fork="yes">
+            <jvmarg line="-Djava.security.policy=&quot;/mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsServer/server.policy&quot;&#10;-Djava.rmi.server.codebase=&quot;file:///mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsServer/frs.jar file:///mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsServerInterface/frsi.jar&quot;"/>
+            <classpath refid="FlightReservationsServer.classpath"/>
+        </java>
+    </target>
+    <target name="FlightReservationsSystemTest">
+        <java classname="org.flightreservationsserver.main.FlightReservationsSystemTest" failonerror="true" fork="yes">
+            <classpath refid="FlightReservationsServer.classpath"/>
+        </java>
+    </target>
+</project>

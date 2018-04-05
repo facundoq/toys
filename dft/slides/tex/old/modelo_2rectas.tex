@@ -1,0 +1,102 @@
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclasescruzadas
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclasescruzadas
+\draw[thick,color=surface] (axis cs:-5,10) -- node[above,color=surface] {\huge{+}} (axis cs:10,-5);
+%\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclasescruzadas
+\draw[thick,color=surface] (axis cs:-10,6) --
+ node[below,color=surface] {\huge{+}}
+ (axis cs:6,-10);
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclasescruzadas
+\draw[thick,color=surface] (axis cs:-5,10) -- 
+ node[above,color=surface] {\huge{+}}
+(axis cs:10,-5);
+\draw[thick,color=surface] (axis cs:-10,6) -- 
+ node[below,color=surface] {\huge{+}}
+(axis cs:6,-10);
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\draw[thick,color=surface] (-5,10) -- 
+node[above,color=surface] {\Huge{+}}
+ (10,-5);
+\draw[thick,color=surface] (-10,6) -- 
+node[below,color=surface] {\Huge{+}}
+(6,-10);
+
+\node at (-5,-5) {{\Huge $(-1,1)$}};
+\node at (5,-5) {{\Huge $(-1,-1)$}};
+\node at (5,5) {{\Huge $(1,-1)$}};
+\node at (-5,5) {{\Huge $(-1,-1)$}};
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\centering
+\resizebox{0.9\textwidth}{!}{
+\input{tikz/neurona2_perceptron}
+}
+\begin{block}{}
+\centering
+$f^1(x,y)=signo(w_x^1 x + w_y^1 y + b)$ \\
+$f^2(x,y)=signo(w_x^2 x + w_y^2 y + b)$ 
+\end{block}
+
+\end{myframe}
+
+
+

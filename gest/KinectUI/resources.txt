@@ -1,0 +1,33 @@
+﻿Parameters of Holtz smoothing algorithm implemented by kinect SDK:
+Smoothing	
+	Specifies the amount of smoothing.
+	0.5	
+	Higher values correspond to more smoothing and a value of 0 causes the raw data to be returned. Increasing smoothing tends to increase latency. Values must be in the range [0, 1.0].
+Correction	
+	Specifies the amount of correction.	
+	0.5	
+	Lower values are slower to correct towards the raw data and appear smoother, while higher values correct toward the raw data more quickly. Values must be in the range [0, 1.0].
+Prediction	
+	Specifies the number of predicted frames.	
+	0.5	 
+Jitter Radius	
+	Specifies the jitter-reduction radius, in meters.	
+	0.05	
+	The default value of 0.05 represents 5cm. Any jitter beyond the radius is clamped to the radius.
+Maximum Deviation Radius	
+	Specifies the maximum radius that filter positions can deviate from raw data, in meters.	
+	0.04	
+	Filtered values that would exceed the radius from the raw data are clamped at this distance, in the direction of the filtered value.
+
+
+
+	-- Links:
+
+	// http://digitalerr0r.wordpress.com/2011/12/13/kinect-fundamentals-4-implementing-skeletal-tracking/
+// handPosition = new Vector2((((0.5f * rightHand.Position.X) + 0.5f) * (640)), (((-0.5f * rightHand.Position.Y) + 0.5f) * (480)));
+
+//http://www.creativedistraction.com/demos/gesture-recognition-kinect-with-hidden-markov-models-hmms/#comments
+//http://kinecttoolbox.codeplex.com/
+
+tray icon
+//http://www.hardcodet.net/projects/wpf-notifyicon

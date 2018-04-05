@@ -1,0 +1,44 @@
+﻿<Window x:Class="KinectUI.view.windows.TrainableGestureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="IGestureWindow" Height="300" Width="300"
+        xmlns:KinectUI="clr-namespace:KinectUI.view.ui"
+        WindowState="Maximized"
+        DataContext="{Binding  RelativeSource={RelativeSource Self}}">
+    <StackPanel>
+        <GroupBox Header="IGesture information">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Id" Target="{Binding ElementName=id}" />
+                    <TextBox Name="id" Text="{Binding gesture.id}" TextChanged="Id_OnTextChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Info" Target="{Binding ElementName=info}" />
+                    <Label Name="info" Content="{Binding gesture.getInfo}" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal">
+            
+            <GroupBox Header="Camera Space">
+                <KinectUI:SkeletonRecorder x:Name="recorder"></KinectUI:SkeletonRecorder>
+            </GroupBox>
+
+            <GroupBox Header="Samples" x:Name="samplesContainer">
+                <StackPanel>
+                    <ListView VerticalContentAlignment="Stretch" Height="400" Name="samplesList"
+                              ItemsSource="{Binding samples}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Time" Width="100" DisplayMemberBinding="{Binding time}" />
+                                <GridViewColumn Header="length" Width="100" DisplayMemberBinding="{Binding length}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Content="Play" Click="play"></Button>
+                    <Button Content="Remove" Click="remove"></Button>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </StackPanel>
+</Window>

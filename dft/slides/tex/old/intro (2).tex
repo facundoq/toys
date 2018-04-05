@@ -1,0 +1,106 @@
+\begin{myframe}
+\centering
+\includegraphics<1>[width=1\textwidth]{img/rat1}
+\includegraphics<2>[width=1\textwidth]{img/rat2}
+\end{myframe}
+
+%http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000288
+\begin{myframe}
+\centering
+\includegraphics[width=1\textwidth]{img/cell3}
+\end{myframe}
+
+
+\begin{myframe}
+\centering
+\vspace{10px}
+\includegraphics<1>[width=1\textwidth]{img/spikes}
+\includegraphics<2>[width=1\textwidth]{img/spikes2}
+\end{myframe}
+
+
+
+
+\begin{myframe}
+\centering 
+\vspace{1px}
+\includegraphics[width=0.7\textwidth]{img/automatic}\\
+\vspace{-10px}
+\hrulefill\\
+$\uparrow$ Procesamiento Automático VS Aprendizaje Automático $\downarrow$\\
+\vspace{-7px}
+\hrulefill\\
+\vspace{4px}
+\includegraphics[width=0.7\textwidth]{img/ml}
+\end{myframe}
+
+
+
+\begin{myframe} 
+\centering
+\resizebox{0.9\textwidth}{!}{
+\begin{tikzpicture}
+  
+  \node[draw,text width=3cm,align=center] (data) at (0,10) {
+  Picos de ejemplo\\
+  clasificados manualmente\\
+  \vspace{2pt}
+  \includegraphics[width=\textwidth]{img/spike_set_classified}};
+
+  \node[draw,text width=3cm,align=center] (training_algorithm) at (5,10) {Algoritmo de aprendizaje\\
+    \vspace{2pt}
+    \includegraphics[width=\textwidth]{img/la}};
+  \node[draw,text width=3cm,align=center] (model) at (5,5.5) {Modelo \vspace{4pt} \\ {\Huge $f(x,y)$} };
+  \node[draw,text width=3cm,align=center] (new_data) at (0,5.5) {Nuevos picos\\
+    \vspace{2pt}
+      \includegraphics[width=\textwidth]{img/spike_set}
+      };
+  \node[draw,text width=3cm,align=center] (inference) at (10,5.5) {Clases inferidas:
+  \\ Pico 1: + 
+  \\ Pico 2: -
+  \\ etc..
+    };
+    
+   \draw[->,very thick] (data) to (training_algorithm);
+   \draw[->,very thick] (training_algorithm) to (model);
+    \draw[->,very thick] (new_data) to (model);
+    \draw[->,very thick] (model) to (inference);
+\end{tikzpicture}
+}
+\end{myframe} 
+
+\begin{myframe} 
+\centering
+\resizebox{0.9\textwidth}{!}{
+\begin{tikzpicture}
+  
+  \node[draw,text width=3cm,align=center] (data) at (0,10) {
+  Picos de ejemplo\\
+  clasificados manualmente\\
+  \vspace{2pt}
+  \includegraphics[width=\textwidth]{img/spike_set_classified}};
+
+  \node[draw,text width=3cm,align=center] (training_algorithm) at (5,10) {Algoritmo de aprendizaje\\
+    \vspace{2pt}
+    \includegraphics[width=\textwidth]{img/la}};
+  
+  \node[draw,text width=3cm,align=center] (model) at (5,5.5) {Red Neuronal Artificial \vspace{4pt} \\ \includegraphics[width=\textwidth]{img/3layers.png} };
+  
+  \node[draw,text width=3cm,align=center] (new_data) at (0,5.5) {Nuevos picos\\
+    \vspace{2pt}
+      \includegraphics[width=\textwidth]{img/spike_set}
+      };
+  \node[draw,text width=3cm,align=center] (inference) at (10,5.5) {Clases inferidas:
+  \\ Pico 1: + 
+  \\ Pico 2: -
+  \\ etc..
+    };
+    
+   \draw[->,very thick] (data) to (training_algorithm);
+   \draw[->,very thick] (training_algorithm) to (model);
+    \draw[->,very thick] (new_data) to (model);
+    \draw[->,very thick] (model) to (inference);
+\end{tikzpicture}
+}
+\end{myframe} 
+

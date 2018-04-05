@@ -1,0 +1,43 @@
+Ambos sistemas fueron desarrollados en GNU/Debian, y además probados en Windows XP. Se utilizó Eclipse 3.4 SR1/SR2 como entorno de desarrollo, y por simplicidad, se recomienda que los proyectos entregados sean probados con dicha herramienta.
+
+1) JUnit Tests del DBMS
+2) DatabaseStressTest del DBMS
+3) Prueba del FlightReservationsSystem.
+
+Nota: Los tests se encuentran en la carpeta "CrappyDBMS/test"
+
+1) Se pueden correr todos los tests juntos simplemente haciendo click derecho en el proyecto y seleccionando "Run As -> JUnit Test". 
+2) La clase DatabaseStressTest tiene un método main ejecutable, y se encuentra en el paquete org.crappydbms.main.
+3) 
+ -1: Dado que se utilizó RMI, el primer paso es correr el ejecutable que permite a los programas registrarse como servidores de un servicio, rmiregistry.
+En Gnu/inux, debería estar en el path, por lo tanto bastaría con abrir una consola y correr "rmiregistry". En windows, se suele encontrar en Archivos de programa\Java\(jdk|jre)versión\bin.
+ -2: Ahora hay que correr el servidor de reservas de vuelos, FlightReservationsServer. Para ello, abra una una consola, diríjase al directorio donde se encuentran los archivos "frsi.jar" (contiene las interfaces RMI para comunicarse con el servidor), y "frs.jar", y ejecute este último con "java -jar frs.jar".  El servidor debería escribir el mensaje "Server Started". 
+ 
+En el directorio, debería crearse una carpeta llamada "flightReservationsServerDB", que contiene la base de datos del servidor (si desea, puede borrar esta carpeta para realizar tests desde cero).
+
+El servidor imprime información de las operaciones abortadas cuando hay clientes ejecutándose.
+ 
+ -3: Por último hay que correr el el programa que maneja el test del servidor, StressTestRunner. Este creará 10 agencias de reservación y 10 agencias de aerolíneas (AgencyMockClient y AirlineMockClient), que se conectarán al servidor de vuelos y realizarán operaciones. A su vez, iniciará un servidor (StressTestManagerServer) que actuará como Manager para las agencias, de forma tal que estas puedan registrar su comienzo, verificar si deben terminar, e informar si sufrieron algún error o fatal o terminaron de ejecutarse correctamente. 
+Para ejecutar el StressTestRunner, dirigase al directorio FlightReservationsTestClients, y allí deberá ejecutar "stressTestRunner.jar".
+
+Este recibe los siguientes argumentos, en orden:
+1: Host del Registry del servidor de reservas de vuelo (default: localhost)
+2: Puerto del Registry del servidor de reservas de vuelo (default 1099)
+3: Número de clientes de aerolíneas (default 10)
+4: Número de clientes de agencias de reservación. (default 10)
+5: Tiempo que durará la prueba, en ms (default 30000)
+ 
+Los argumentos deben especificarse en orden, y no se pueden saltear. Por ejemplo:
+java -jar stressTestRunner 30.50.38.24 389 15 20 60000
+Utiliza la ip 30.50.38.24, el puerto 389, crea 15 clientes de aerolíneas, 20 clientes de agencia de reservación, y corre el test por 60 segundos.
+
+java -jar stressTestRunner 30.50.38.24 389 
+Utiliza la ip 30.50.38.24, el puerto 389, y deja el resto en default.
+
+Ahora, si sólo queremos especificar que el test corra por 60 segundos, si o si tenemos que especificar los argumentos anteriores (host, puerto, nº de aerolíneas, nº de agencias de reservación); lo mismo si queremos que haya 15 aérolineas y que el resto quede con los valores por default.
+
+
+Los jars correspondientes a AgencyMockClient y AirlineMockClient deben estar en la misma carpeta que stressTestRunner.jar, así como el jar que contiene las interfaces RMI del StressTestManagerServer, stmi.jar.
+ 
+
+

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="CrappyDBMS">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../home/facuq/programs/eclipse3.4J2EE/eclipse"/>
+    <property name="FlightReservationsServer.location" value="../FlightReservationsServer"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.junit4_4.3.1/junit.jar"/>
+    </path>
+    <path id="CrappyDBMS.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src" excludes="**/*.launch, **/*.testsuite, **/*.deploy, **/*.location, **/*.execution, **/*.datapool, **/*.artifact, **/*.testlog, **/*.xml, **/*.html, **/*.svg, **/*.java"/>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test" excludes="**/*.launch, **/*.testsuite, **/*.deploy, **/*.location, **/*.execution, **/*.datapool, **/*.artifact, **/*.testlog, **/*.xml, **/*.html, **/*.svg, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="test"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="${FlightReservationsServer.location}/build.xml" inheritAll="false" target="clean"/>
+        <ant antfile="${FlightReservationsServer.location}/build.xml" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="PageLockTest.testLockReaders">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="PageLockByStepsTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockByStepsTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="JoinRelationSchemaTest.testOperations">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinRelationSchemaTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="src">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="JoinOperatorTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinOperatorTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DatabaseMultithreadedTest.testAddTuplesAbortDeadlock">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.main.DatabaseMultithreadedTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DatabaseTest.testAddTuplesCheckPages">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.main.DatabaseTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="JoinRelationSchemaTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinRelationSchemaTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DataDictionaryTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.datadictionary.DataDictionaryTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DeleteOperationTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operations.DeleteOperationTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="ModifyOperationTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operations.ModifyOperationTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="RenameAttributesOperatorTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operators.rename.RenameAttributesOperatorTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DatabaseStressTest">
+        <java classname="org.crappydbms.main.DatabaseStressTest" failonerror="true" fork="yes">
+            <classpath refid="CrappyDBMS.classpath"/>
+        </java>
+    </target>
+    <target name="DatabaseMultithreadedTimeoutTest">
+        <java classname="org.crappydbms.main.DatabaseMultithreadedTimeoutTest" failonerror="true" fork="yes">
+            <classpath refid="CrappyDBMS.classpath"/>
+        </java>
+    </target>
+    <target name="CrappyDBMS (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.datadictionary.DataDictionaryTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.dbfiles.heapfile.HeapFilePageTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.dbfiles.heapfile.HeapFileTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockByStepsTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockDeadlockTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockTimeOutTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.main.DatabaseMultithreadedAddTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.main.DatabaseMultithreadedDeleteTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.main.DatabaseMultithreadedTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.main.DatabaseTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.main.test.RandomChooserTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operations.DeleteOperationTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operations.ModifyOperationTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinOperatorTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinRelationSchemaTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinTupleTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.join.natural.NaturalJoinOperatorTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.projection.ProjectedRelationSchemaTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.projection.ProjectionOperatorTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.rename.RenameAttributesOperatorTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.operators.selection.SelectionOperatorTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.queries.predicates.simple.SimplePredicateTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.relations.fields.StringFieldTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.relations.schemas.attributes.BaseAttributeTest" todir="${junit.output.dir}"/>
+            <test name="org.crappydbms.relations.tuples.BaseTupleTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DatabaseTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.main.DatabaseTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="PageLockTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.dbfiles.locking.PageLockTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DatabaseTest.testPersistanceAfterCommit">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.main.DatabaseTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="JoinTupleTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.queries.operators.join.cartesianproduct.JoinTupleTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="CrappyDBMS">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.main.DatabaseTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="DatabaseMultithreadedDeleteTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.main.DatabaseMultithreadedDeleteTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="HeapFileTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="org.crappydbms.dbfiles.heapfile.HeapFileTest" todir="${junit.output.dir}"/>
+            <classpath refid="CrappyDBMS.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

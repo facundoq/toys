@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB22D26D-ECC2-4D08-A867-15D20D8CDD2D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KinectUI</RootNamespace>
+    <AssemblyName>KinectUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Db4objects.Db4o">
+      <HintPath>..\packages\db4o-devel.8.1.184.15492\lib\net40\Db4objects.Db4o.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Data.Services">
+      <HintPath>..\packages\db4o-devel.8.1.184.15492\lib\net40\Db4objects.Db4o.Data.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Db4objects.Db4o.Linq">
+      <HintPath>..\packages\db4o-devel.8.1.184.15492\lib\net40\Db4objects.Db4o.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.4.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Hardcodet.Wpf.TaskbarNotification.1.0.4.0\lib\net40\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf">
+      <HintPath>..\packages\HelixToolkit.2013.1.14.1\lib\NET45\HelixToolkit.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ILNumerics32">
+      <HintPath>packages\ILNumerics.32Bit.2.14.4735.552\lib\ILNumerics32.dll</HintPath>
+    </Reference>
+    <Reference Include="InputSimulator">
+      <HintPath>InputSimulator.0.1.0.0-bin\Debug\InputSimulator.dll</HintPath>
+    </Reference>
+    <Reference Include="Kinect.Toolbox, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\KinectToolbox.1.2.1.1\lib\Kinect.Toolbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Kinect.Toolbox.Voice, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\KinectToolbox.1.2.1.1\lib\Kinect.Toolbox.Voice.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>packages\MathNet.Numerics.2.4.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics.IO">
+      <HintPath>packages\MathNet.Numerics.2.4.0\lib\net40\MathNet.Numerics.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft SDKs\Kinect\v1.7\Assemblies\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect.Toolkit.FaceTracking, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\KinectToolbox.1.2.1.1\lib\Microsoft.Kinect.Toolkit.FaceTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection">
+      <HintPath>..\packages\db4o-devel.8.1.184.15492\lib\net40\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\NUnit 2.6.2\bin\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="db\LibraryDB.cs" />
+    <Compile Include="db\ODB.cs" />
+    <Compile Include="gestures\CombinedJointGestureDetector.cs" />
+    <Compile Include="gestures\IGesture.cs" />
+    <Compile Include="gestures\SkeletonJointWindow.cs" />
+    <Compile Include="gestures\SkeletonWindow.cs" />
+    <Compile Include="gestures\trainable\RBFDetector.cs" />
+    <Compile Include="gestures\trainable\NeuralNetworkDetector.cs" />
+    <Compile Include="gestures\trainable\OutputDecider.cs" />
+    <Compile Include="gestures\trainable\TrainableGesture.cs" />
+    <Compile Include="gestures\trainable\TrainableGestureDetector.cs" />
+    <Compile Include="KinectManager.cs" />
+    <Compile Include="KinectStateEvent.cs" />
+    <Compile Include="mouse\MouseSystem.cs" />
+    <Compile Include="observer\KinectSkeletonObserverProvider.cs" />
+    <Compile Include="observer\KinectSkeletonObserver.cs" />
+    <Compile Include="systems\KinectSystem.cs" />
+    <Compile Include="tray.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tray.resx</DependentUpon>
+    </Compile>
+    <Compile Include="utility\Hotkey.cs" />
+    <Compile Include="view\kinect\Joint3D.cs" />
+    <Compile Include="view\kinect\SkeletonDisplay3d.xaml.cs">
+      <DependentUpon>SkeletonDisplay3d.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\kinect\Skeleton3d.cs" />
+    <Compile Include="view\kinect\SkeletonDrawer3dOptions.cs" />
+    <Compile Include="view\ui\SamplePlayer.cs" />
+    <Compile Include="view\ui\SkeletonRecorder.xaml.cs">
+      <DependentUpon>SkeletonRecorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\SkeletonDrawer.cs" />
+    <Compile Include="view\ui\UIConsole.xaml.cs">
+      <DependentUpon>UIConsole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\GestureLog.xaml.cs">
+      <DependentUpon>GestureLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\GestureOptions.xaml.cs">
+      <DependentUpon>GestureOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\JointPositions.xaml.cs">
+      <DependentUpon>JointPositions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\ManagerAwareControl.cs" />
+    <Compile Include="view\ui\MouseOptions.xaml.cs">
+      <DependentUpon>MouseOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\SensorOptions.xaml.cs">
+      <DependentUpon>SensorOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\TrayIconView.cs" />
+    <Compile Include="view\tray\icons\BitmapHolder.cs" />
+    <Compile Include="view\tray\icons\Converter.cs" />
+    <Compile Include="view\tray\icons\IconHolder.cs" />
+    <Compile Include="view\tray\icons\ImageStructs.cs" />
+    <Compile Include="view\ui\SensorStatus.xaml.cs">
+      <DependentUpon>SensorStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\ui\SkeletonDisplay.xaml.cs">
+      <DependentUpon>SkeletonDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\windows\TrainableGestureWindow.xaml.cs">
+      <DependentUpon>TrainableGestureWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="actions\Action.cs" />
+    <Compile Include="actions\ActionSystem.cs" />
+    <Compile Include="actions\ConsoleOutputAction.cs" />
+    <Compile Include="actions\KeyboardAction.cs" />
+    <Compile Include="actions\MouseAction.cs" />
+    <Compile Include="actions\PostureActionTranslator.cs" />
+    <Compile Include="actions\GestureActionTranslator.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="gestures\GestureStatistics.cs" />
+    <Compile Include="gestures\WindowedOneJointGestureDetector.cs" />
+    <Compile Include="gestures\algorithmic\SwipeGestureDetector.cs" />
+    <Compile Include="actions\HardcodedActionSystemInitializer.cs" />
+    <Compile Include="MainWindow.Systems.cs" />
+    <Compile Include="gestures\BaseGestureDetector.cs" />
+    <Compile Include="gestures\GestureDetectedEvent.cs" />
+    <Compile Include="KinectUtility.cs" />
+    <Compile Include="MainWindow.Options.cs" />
+    <Compile Include="mouse\AbsoluteJointScreenPositionMapper.cs" />
+    <Compile Include="mouse\MouseEvent.cs" />
+    <Compile Include="mouse\smoothing\AverageSmoothingAlgorithm.cs" />
+    <Compile Include="mouse\smoothing\NullSmoothingAlgorithm.cs" />
+    <Compile Include="mouse\utility\FixedSizeQueue.cs" />
+    <Compile Include="mouse\smoothing\WindowedSmoothingAlgorithm.cs" />
+    <Compile Include="mouse\smoothing\ExponentialSmoothingAlgorithm.cs" />
+    <Compile Include="mouse\utility\Joint.cs" />
+    <Compile Include="mouse\RelativeJointScreenPositionMapper.cs" />
+    <Compile Include="mouse\JointScreenPositionMapper.cs" />
+    <Compile Include="mouse\smoothing\SmoothingAlgorithm.cs" />
+    <Compile Include="mouse\utility\Utility.cs" />
+    <Compile Include="posture\AlgorithmicPostureDetectorAdapter.cs" />
+    <Compile Include="posture\LeftHandAboveTheShouldersPosture.cs" />
+    <Compile Include="posture\PostureSystem.cs" />
+    <Compile Include="posture\Posture.cs" />
+    <Compile Include="posture\PostureDetectedEvent.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="gestures\GestureFactory.cs" />
+    <Compile Include="gestures\GestureSystem.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="view\kinect\SkeletonDisplay3d.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\ui\SkeletonRecorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\ui\UIConsole.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\GestureLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\GestureOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\JointPositions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\MouseOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\SensorOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\SensorStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\ui\SkeletonDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\windows\TrainableGestureWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mouse\Mouse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tray.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>tray.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mlt\mlt.csproj">
+      <Project>{0131fe5a-cab0-43b0-9394-157431e656a1}</Project>
+      <Name>mlt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleLibrary\SampleLibrary.csproj">
+      <Project>{9086083a-6ee5-474c-b2f4-eb51317c699c}</Project>
+      <Name>SampleLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\utilities\utilities.csproj">
+      <Project>{4b9e190f-ffdc-483e-a7c9-af072b1b7eb1}</Project>
+      <Name>utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disconnected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotReady.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PoweredNotTracking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PoweredTracking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="res\tray\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App_Readme\MathNet.Numerics.readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App_Readme\MathNet.Numerics.copyright.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App_Readme\MathNet.Numerics.authors.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libiomp5md.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="mkl_custom32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FaceTrackLib.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

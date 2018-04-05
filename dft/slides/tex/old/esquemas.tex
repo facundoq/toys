@@ -1,0 +1,169 @@
+\newcommand{\nodedb}[1]{\node[set] (db) [#1] {Base de datos};}
+\newcommand{\nodenewgesture}[1]{\node[set] (newgesture) [#1] {Nuevo gesto};}
+\newcommand{\nodetraining}[1]{  \node[function] (training) [#1] {Entrenamiento} ;}
+\newcommand{\nodede}[1]{\node[setd] (de) [#1] {Conjunto de Entrenamiento};}
+\newcommand{\nodedp}[1]{\node[setd] (dp) [#1] {Conjunto de Prueba};}
+\newcommand{\nodemodel}[1]{\node[function] (model) [#1] {Modelo} ;}
+\newcommand{\nodeinference}[1]{\node[inference] (inference) [#1] {Inferencia} ;}
+\newcommand{\nodeclass}[1]{\node[inference] (class) [#1] {Clase} ;}
+\newcommand{\nodeerror}[1]{\node[inference,minimum width=10em,minimum height=5em] (error) [#1] {Error} ;}
+\newcommand{\nodepre}[1]{\node[setp] (pre) [#1] {Datos preprocesados};}
+\newcommand{\nodeprenewgesture}[1]{\node[setp] (prenewgesture) [#1] {Nuevo gesto preprocesado};}
+\newcommand{\nodefeature}[1]{\node[setp] (feature) [#1] {Representación Datos};}
+\newcommand{\nodefeaturenewgesture}[1]{\node[setp] (featurenewgesture) [#1] {Representación nuevo gesto};}
+
+%\newcommand{\node}[1]{}
+
+\newcommand{\tikzstylesbig}{
+\tikzset{
+node distance=5cm,
+set/.style={circle,text width=3cm,align=center,fill=green!50,font=\sffamily\Large},
+setd/.style={circle,text width=3cm,align=center,fill=green!30,font=\sffamily\Large},
+setp/.style={circle,text width=3cm,align=center,fill=green!20,font=\sffamily\Large},
+function/.style={rectangle,minimum width=4cm,fill=blue!20,draw,font=\sffamily\Large},
+inference/.style={ellipse,fill=red!50,draw,font=\sffamily\LARGE},
+connector/.style={->,thick,shorten >=0.1cm,shorten <=0.1cm,},
+    connectord/.style={->, %shorten >=0.1cm,shorten <=0.1cm
+    thick, decoration={markings,mark=at position
+       1 with {\arrow[semithick]{open triangle 60}}},
+       double distance=1.4pt, shorten >= 5.5pt,
+       preaction = {decorate},
+       postaction = {draw,line width=1.4pt, white,shorten >= 4.5pt}
+    }
+}
+}
+
+
+\newcommand{\tikzstylessmall}{
+  \tikzset{
+    node distance=5cm,
+    set/.style={circle,text width=1.5cm,align=center,fill=green!50,font=\sffamily\Large},
+    function/.style={rectangle,minimum width=4cm,fill=blue!20,draw,font=\sffamily\Large},
+    inference/.style={ellipse,fill=red!50,draw,font=\sffamily\Large},
+    connector/.style={->,thick,shorten >=0.1cm,shorten <=0.1cm,}
+  }
+}
+
+
+\newcommand{\esquemaaprendizaje}[1]{
+\tikzstylessmall
+\begin{tikzpicture}[scale=#1, transform shape]
+  \nodedb{}
+  \nodenewgesture{below of=db}
+  \nodetraining{right of=db}
+  \nodemodel{right of=newgesture}
+  \nodeinference{right of=model}
+  
+  \path[every node/.style={font=\sffamily\small}]
+    (db) edge [connector, left] (training)
+    (newgesture) edge [connector, left] (model)
+    (training) edge [connector, left] (model)
+    (model) edge [connector, left] (inference)    
+    ;
+\end{tikzpicture}
+}
+
+
+\newcommand{\esquemaclasificacion}[1]{
+\tikzstylessmall
+\begin{tikzpicture}[scale=#1, transform shape]
+  \nodedb{}
+  \nodenewgesture{below of=db}
+  \nodetraining{right of=db}
+  \nodemodel{right of=newgesture}
+  \nodeclass{right of=model}
+  
+  
+  \path[every node/.style={font=\sffamily\small}]
+    (db) edge [connector, left] (training)
+    (newgesture) edge [connector, left] (model)
+    (training) edge [connector, left] (model)
+    (model) edge [connector, left] (class)    
+    ;
+\end{tikzpicture}
+}
+
+\newcommand{\esquemaavalidacionpreprocesamiento}[1]{
+\tikzstylesbig
+\begin{tikzpicture}[scale=#1, transform shape]
+  \nodedb{}
+  \nodepre{right of=db}
+  \nodefeature{right of=pre}
+  \nodede{above right of=feature}
+  \nodedp{below right of=feature}
+  \nodetraining{right of=de}
+  \nodemodel{right of=dp}
+  \nodeerror{right of=model}
+
+  
+  
+  \path[every node/.style={font=\sffamily\small}]
+    (db) edge [connector, left] (pre)
+    (pre) edge [connector, left] (feature)
+    (feature) edge [connector, left] (de)
+    (feature) edge [connector, left] (dp)
+    (de) edge [connector, left] (training)
+    (dp) edge [connector, left] (model)
+    (training) edge [connector, left] (model)
+    (model) edge [connector, left] (error)    
+    ;
+    
+     \draw [fill=orange] (1,1) rectangle (1,1);
+  
+\end{tikzpicture}
+}
+
+
+
+\newcommand{\esquemaaprendizajepreprocesamiento}[1]{
+\tikzstylesbig
+\begin{tikzpicture}[scale=#1, transform shape]
+  \nodedb{}
+  \nodenewgesture{below of=db}
+  \nodepre{right of=db}
+  \nodefeature{right of=pre}
+  \nodetraining{right of=feature}
+  \nodeprenewgesture{right of=newgesture}
+  \nodefeaturenewgesture{right of=prenewgesture}
+  \nodemodel{right of=featurenewgesture}
+  \nodeclass{right of=model}
+  
+  \path[every node/.style={font=\sffamily\small}]
+    (db) edge [connector, left] (pre)
+    (pre) edge [connector, left] (feature)
+    (feature) edge [connector, left] (training)
+    (newgesture) edge [connector, left] (prenewgesture)
+    (prenewgesture) edge [connector, left] (featurenewgesture)
+    (featurenewgesture) edge [connector, left] (model)
+    (training) edge [connector, left] (model)
+    (model) edge [connector, left] (class)    
+    ;
+    
+     \draw [fill=orange] (1,1) rectangle (1,1);
+  
+\end{tikzpicture}
+}
+
+
+\newcommand{\esquemavalidacion}[1]{
+\tikzstylesbig
+
+\begin{tikzpicture}[scale=#1, transform shape]
+  \nodedb{}
+  \nodede{above right of=db}
+  \nodedp{below right of=db}
+  \nodetraining{right of=de}
+  \nodemodel{right of=dp}
+  \nodeerror{right of=model}
+  
+  \path[every node/.style={font=\sffamily\small}]
+    (db) edge [connector, left] (de)
+    (db) edge [connector, left] (dp)
+    (dp) edge [connector, left] (model)
+    (de) edge [connector, left] (training)
+    (training) edge [connector, left] (model)
+    (model) edge [connector, left] (error)    
+    ;
+  
+\end{tikzpicture}
+}

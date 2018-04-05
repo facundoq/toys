@@ -1,0 +1,118 @@
+\begin{myframe}
+\frametitle{Reconocimiento de gestos (Tesis de Lic.)}
+
+    \begin{columns}
+    
+    \begin{column}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{img/esqueletos}
+    \end{column}
+    
+    \begin{column}{0.02\textwidth}
+    \centering
+    =
+    \end{column}
+            
+    \begin{column}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{img/bag-of-arrows}
+    \end{column}
+    
+    \begin{column}{0.02\textwidth}
+    \centering
+    $\rightarrow$
+    \end{column}
+    
+    \begin{column}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{img/3layers}
+    \end{column}
+  \end{columns}
+   \end{myframe} 
+
+
+
+\begin{myframe}{}
+\centering
+\resizebox{1\textwidth}{!}{
+ \begin{tikzpicture}[rounded corners=2pt,very thin]
+\shade[draw=pbblue,left color=green!70,right color=blue!70] (0pt, 0pt) rectangle ++ (13, 2);
+
+\draw[color=normal text.fg!50]  
+  (0pt, 0pt) rectangle (13,2) 
+    node[pos=0.5,color=normal text.fg] {.};
+
+\node[draw,text width=3cm,align=center,color=green!70]  (bio) at (2,-1) {{\Huge Bio}};
+\node[draw,text width=3cm,align=center,color=blue!30] (comp) at (11,-1) {{\Huge Comp}};
+
+    \draw[->,very thick] (bio) to[out=-15,in=-179] (comp);
+   \draw[->,very thick] (comp) to[out=165,in=0] (bio);
+
+    
+\node[circle,fill,minimum size=5mm] (head) at (11,1.67) {};
+\node[rounded corners=2pt,minimum height=1.3cm,minimum width=0.4cm,fill,below = 1pt of head] (body) at (11,1.43) {};
+\draw[->,very thick]  (10.5,1.1) -- (9,1.1);
+
+
+\draw[line width=1mm,round cap-round cap] ([shift={(2pt,-1pt)}]body.north east) --++(-90:6mm);
+\draw[line width=1mm,round cap-round cap] ([shift={(-2pt,-1pt)}]body.north west)--++(-90:6mm);
+\draw[thick,white,-round cap] (body.south) --++(90:5.5mm);
+
+\node[draw,text width=3cm,align=center]  at (11,-3) {Redes artificiales};    
+\node[draw,text width=3cm,align=center]  at (6.5,-3) {Modelos};  
+\node[draw,text width=3cm,align=center]  at (2,-3) {Redes biológicas};    
+
+  \end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\centering
+{\Huge ¡Gracias!}
+\end{myframe}
+
+
+\begin{myframe}
+\frametitle{Codificación de reglas simbólicas (discretas) con Redes Neuronales Recurrentes}
+\centering
+\begin{columns}
+    \begin{column}{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{img/dfa2}
+    \end{column}
+    
+    \begin{column}{0.02\textwidth}
+    \centering
+    =
+    \end{column}
+    
+    \begin{column}{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{img/recurrent2}
+    \end{column}
+\end{columns}
+\end{myframe}
+
+
+
+
+\begin{myframe}
+\frametitle{Redes neuronales, profundas, convolucionales (2012)}
+\centering
+
+
+\includegraphics[width=1\textwidth]{img/convolutional}
+
+\begin{block}{\centering Inspiradas por la corteza visual}
+\centering
+\begin{itemize}
+\centering
+\item Muchas capas
+\item $\rightarrow$ dirección de mayor abstracción
+\item Capas de convolución = filtros
+\end{itemize}
+\end{block}
+
+\includegraphics[width=0.5\textwidth]{img/deepconvolutional}
+\end{myframe}

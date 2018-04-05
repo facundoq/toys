@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project FlightReservationsAgencyClient">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsAgencyClient/frac.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="org.flightreservationsagencyclient.main.TestClient"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsAgencyClient/bin"/>
+            <fileset dir="/mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsServerInterface/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/mnt/cosas/sharedhome/EclipseWorkspace/FlightReservationsServerInterface/frsi.jar"/>
+        </jar>
+    </target>
+</project>

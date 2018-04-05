@@ -1,0 +1,16 @@
+
+
+Los archivos main_facuft_VERSION.m contienen código de ejemplo muy simple para comparar la salida de la implementación por defecto de MATLAB de la FFT contra la propuesta en cada caso ( DFT, FACUFT, FACUFT_ITERATIVE).
+
+Estos archivos con scripts llaman a las funciones definidas en los siguientes archivos de la carpeta "functions":
+
+dft.m
+facuft.m
+facuft_basecase.m
+facuft_iterative.m
+
+Estos archivos, donde en cada uno se define una función, son los que tienen las implementaciones de las distintas formas de calcular la DFT.
+
+El archivo main_timing.m tiene un script que realiza la comparación de tiempos para cada una de las funciones anteriores. Para ello, utiliza otras funciones auxiliares definidas en la carpeta "timing", que no tienen mucha importancia ya que no se utilizan para calcular la FFT, solo para probarla. 
+
+La carpeta "export_fig-master" tiene funciones bajadas de internet para guardar las figuras de MATLAB con mejor calidad. No se utiliza en las implementaciones de la FFT.

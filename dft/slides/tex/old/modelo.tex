@@ -1,0 +1,203 @@
+
+
+\begin{myframe}
+\centering
+{\Huge Modelo}\\
+{ (Sin entrenamiento todavía)}
+\end{myframe}
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclases
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\centering
+\includegraphics[width=\textwidth]{img/wall4}
+\end{myframe}
+
+%\begin{myframe}
+%\pgfmathsetseed{1}
+%\centering
+%\resizebox{0.68\textwidth}{!}{
+%\begin{tikzpicture}[]
+%\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+%\datosdosclases
+%\end{axis}
+%\end{tikzpicture}
+%}
+%\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclases
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+\draw[thick,color=surface] (axis cs:-10,-10) -- (axis cs:10,10);
+
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\begin{columns}
+\begin{column}{0.6\textwidth}
+
+\resizebox{1.2\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclases
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+\draw[thick,color=surface] (axis cs:-10,-10) -- node[below,color=surface,rotate=52] {$f(x,y)= 0$} (axis cs:10,10);
+
+%\node[fill=black!95,rotate=52] at (axis cs:-3,1) {{\Large $x w_x +y w_y+b > 0$}};
+%\node[fill=black!95,rotate=52] at (axis cs:3,-1) {{\Large $x w_x +y w_y+b < 0$}};
+\end{axis}
+\end{tikzpicture}
+}
+\end{column}
+
+\hspace{20px}
+\begin{column}{0.30\textwidth}
+\begin{block}{\centering Función de decisión}
+\centering
+$f(x,y)= signo(x \times w_x +y\times w_y+b)$ \\ 
+\vspace{20px}
+$signo(z)=$ $-1$ o $+1$
+\end{block}
+\end{column}
+\end{columns}
+\end{myframe}
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,},xmin=-10,xmax=10,ymin=-10,ymin=10]
+\draw[thick,color=surface] (axis cs:-10,-10) -- (axis cs:10,10);
+\node[] at (axis cs:-2.5,3.5) {{\Huge $f(x,y) = +1$}};
+\node[] at (axis cs:2,-4) {{\Huge $f(x,y) = -1$}};
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+%\datosdosclasesinvisible
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,},xmin=-10,xmax=10,ymin=-10,ymax=10]
+\draw[thick,color=surface] (axis cs:-10,-10) -- (axis cs:10,10);
+%\node[] at (axis cs:-2.5,3.5) {{\Huge $f(x,y) = +1$}};
+%\node[] at (axis cs:2,-4) {{\Huge $f(x,y) = -1$}};
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+%\datosdosclasesinvisible
+\addplot[mark=o,]
+                coordinates{
+                 (5,-5)
+                };
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,},xmin=-10,xmax=10,ymin=-10,ymax=10]
+\draw[thick,color=surface] (axis cs:-10,-10) -- (axis cs:10,10);
+%\node[] at (axis cs:-2.5,3.5) {{\Huge $f(x,y) = +1$}};
+%\node[] at (axis cs:2,-4) {{\Huge $f(x,y) = -1$}};
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+%\datosdosclasesinvisible
+\addplot[mark=o,negative]
+                coordinates{
+                 (5,-5)
+                };
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,},xmin=-10,xmax=10,ymin=-10,ymax=10]
+\draw[thick,color=surface] (axis cs:-10,-10) -- (axis cs:10,10);
+%\node[] at (axis cs:-2.5,3.5) {{\Huge $f(x,y) = +1$}};
+%\node[] at (axis cs:2,-4) {{\Huge $f(x,y) = -1$}};
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+%\datosdosclasesinvisible
+\addplot[mark=o,]
+                coordinates{
+                 (-5,5)
+                };
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,},xmin=-10,xmax=10,ymin=-10,ymax=10]
+\draw[thick,color=surface] (axis cs:-10,-10) -- (axis cs:10,10);
+%\node[] at (axis cs:-2.5,3.5) {{\Huge $f(x,y) = +1$}};
+%\node[] at (axis cs:2,-4) {{\Huge $f(x,y) = -1$}};
+\node[color=surface] at (axis cs:-0.5,0.5) {\huge{+}};
+%\datosdosclasesinvisible
+\addplot[mark=o,positive]
+                coordinates{
+                 (-5,5)
+                };
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\centering
+
+\input{tikz/neurona_perceptron}
+
+\begin{block}{\centering Red Neuronal Artificial}
+\centering
+\begin{itemize}
+\centering
+\item $x$,$y$ $=$ neuronas sensoriales
+\item Flechas $=$ conexiones sinápticas (con pesos, $w_x$ y $w_y$)
+\item $f$ $=$ integra información de $x$ e $y$
+\item $b$ $=$ umbral
+\end{itemize}
+\end{block}
+\end{myframe}
+
+
+

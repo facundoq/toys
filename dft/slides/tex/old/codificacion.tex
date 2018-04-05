@@ -1,0 +1,71 @@
+
+\begin{myframe}
+\centering
+{\Huge Codificación de Spikes}    
+\end{myframe}
+
+\begin{myframe}
+\centering
+\includegraphics[width=0.45\textwidth]{img/spike_negative}
+\;\;
+\includegraphics[width=0.45\textwidth]{img/spike_positive}
+\\
+Spikes de clase $-$ \qquad \qquad \qquad  \qquad \qquad Spikes de clase $+$
+\end{myframe}
+
+\begin{myframe}
+\centering
+    %\includegraphics<1>[width=0.65\textwidth]{img/spike}
+    \includegraphics<1-2>[width=0.85\textwidth]{img/spike2}
+     \vspace{10px}
+    \begin{columns}<2>
+        \centering
+        \begin{column}{0.3\textwidth}
+        \end{column}
+        \begin{column}{0.1\textwidth}
+        \centering
+        \includegraphics[width=2\textwidth]{img/spike_transformation}
+        \end{column}
+        \hspace{10px}
+        \begin{column}{0.09\textwidth}
+        \Huge $\rightarrow$
+        \end{column}
+        
+        \begin{column}{0.2\textwidth}
+                \centering
+        \large $(Amplitud,Duración)$\\
+         o \\
+         $(x,y) \in \mathbf{R}^2$
+        \end{column}
+        \begin{column}{0.5\textwidth}
+        \end{column}
+        
+    \end{columns}
+\end{myframe}
+
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclasessinpintar
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,}]
+\datosdosclases
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}

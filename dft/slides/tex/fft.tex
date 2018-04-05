@@ -1,0 +1,164 @@
+
+\begin{myframe}{FFT: Derivation (1) }
+\centering
+\begin{align*}
+F_N (k)&= \dft = \sumnn x(2n) \wn{k (2n)} + \sumnn x(2n+1) \wn{k (2n+1)} \\
+&= \sumnn x(2n) \wn{k 2 n} + \wn{k} \sumnn x(2n+1) \wn{k(2n)} \\
+&= \sumnn x(2n) \wnn{kn} + \wn{k} \sumnn x(2n+1) \wnn{kn} \\
+&= \fnneven (k) + \wn{k} \fnnodd (k) \qquad k=0,\dots,(N-1)
+\end{align*}
+
+\begin{block}{}
+\centering
+$\wn{k}$ are called \textit{twiddle factors}
+\end{block}
+
+\end{myframe}
+
+\begin{myframe}{FFT: Derivation (2)}
+\centering
+
+\begin{block}{}
+\centering
+¿Value of $\fnneven(k)$ and $\fnnodd(k)$ if $k \geq N/2$?
+\end{block}
+
+Define $N_1=\{ 0,\dots,N/2-1 \}$ and $N_2=\{ N/2,\dots,N-1 \}$
+%\small
+\begin{align*}
+\fn (k)&= \fnneven (k) + \wn{k} \fnnodd (k)\\
+&= \begin{cases}
+\fnneven (k) + \wn{k} \fnnodd (k) &\mbox{if } k \in N_1 \\
+\fnneven (k) + \wn{k} \fnnodd (k) & \mbox{if } k \in N_2 \\
+\end{cases}
+\\  \text{If } k\geq N/2 &\rightarrow k=N/2+k'
+\\ &= \begin{cases}
+\fnneven (k) + \wn{k} \fnnodd (k) &\mbox{if } k \in N_1 \\
+\fnneven (N/2+k') + \wn{N/2+k'} \fnnodd (N/2+k') & \mbox{if } k' \in N_1
+\end{cases}
+\\ &= \begin{cases}
+\fnneven (k) + \wn{k} \fnnodd (k) & \mbox{if } k \in N_1 \\
+\fnneven (k') - \wn{k'} \fnnodd (k') & \mbox{if } k' \in N_1
+\end{cases}
+\end{align*}
+
+\end{myframe}
+
+\begin{myframe}{FFT: Divide and conquer}
+\centering
+\begin{block}{Calculating $\fn(k)$ for all $k$}
+\begin{enumerate}
+\item Split $x(n)$ into $x_{odd}(n)$ and $x_{even}(n)$.
+\item Calculate $\fnneven(k)$ and $\fnnodd(k)$ for all $k$
+\item Calculate $\fn(k)$ for all $k$ as:
+\begin{equation}
+\fn (k) = \begin{cases}
+\fnneven (k) + \wn{k} \fnnodd (k) & \mbox{if } k \in N_1 \\
+\fnneven (k') - \wn{k'} \fnnodd (k') & \mbox{if } k' \in N_1, \; k=N/2+k'
+\end{cases}
+\end{equation}
+
+\end{enumerate}
+\end{block}
+\end{myframe}
+
+\begin{myframe}{FFT: Recursion splits}
+\centering
+\scalebox{0.75}{
+    \input{tex/dft_recursion_splits}
+} 
+\end{myframe}
+
+\begin{myframe}{FFT: Recursion tree}
+\centering
+\scalebox{0.85}{
+    \input{tex/dft_recursion_tree}
+} 
+\end{myframe}
+
+\begin{myframe}{FFT: Implementation}
+\centering
+\lstinputlisting[basicstyle=\small\ttfamily]{code/facuft.m}
+\end{myframe}
+
+\begin{myframe}{FFT: Time complexity}
+\centering
+\lstinputlisting[basicstyle=\small\ttfamily]{code/facuft_time.m}
+\end{myframe}
+
+\begin{myframe}{FFT: Solving recurrence}
+\centering
+
+\only<1>{
+\begin{block}{}
+\begin{equation*}
+T(n)= 
+\begin{cases}
+    D & \mbox{if} \; n=1 \\
+    2T(\frac{n}{2})+Cn & \mbox{if} \; n > 1
+\end{cases}
+\end{equation*}
+\end{block}
+}
+
+\only<2->{
+\begin{block}{}
+\begin{equation*}
+T(n)= 
+\begin{cases}
+    1 & \mbox{if} \; n=1 \\
+    2T(\frac{n}{2})+n & \mbox{if} \; n > 1
+\end{cases}
+\end{equation*}
+\end{block}
+}
+
+\only<3>{
+\begin{align*}
+T(n)&= 2T(\frac{n}{2})+n = 2 (2T(\frac{n}{2^2})+\frac{n}{2})+n = 2^2 T(\frac{n}{2^2})+2\frac{n}{2}+n \\
+&= 2^2 T(\frac{n}{2^2})+2n = \dots = 2^k T(\frac{n}{2^k})+kn \\
+\mbox{If } \frac{n}{2^k}=1 &\rightarrow k = \log_2(n): \\
+T(n)&= 2^{\log_2(n)} T(1) + \log_2(n) n = n+n \log_2(n) \in O(n \log(n))
+\end{align*}
+}
+
+\end{myframe}
+
+\begin{myframe}{FFT: Time complexity with recursion tree}
+\centering
+\scalebox{0.71}{
+    \input{tex/dft_recursion_tree_complexity}
+} 
+\end{myframe}
+
+\begin{myframe}{FFT: Output}
+\centering
+\includegraphics[height=200pt]{img/facuft}
+\end{myframe}
+
+\begin{myframe}{FFT: Empirical running time}
+\centering
+\includegraphics[height=200pt]{img/running_time}
+\end{myframe}
+
+\begin{myframe}{FFT: Implementation improvements}
+\centering
+\begin{itemize}
+\item Recursion kills performance $\rightarrow$ bigger base cases
+\item In every recursion call, split the input $x$ into $K$ subarrays instead of 2 (tree depth $= \log_K(n)$, \textit{fatter} trees) $\rightarrow$ Radix-m algorithms.
+\item Recursion kills performance $\rightarrow$ iterative implementation
+\item Calculate in-place (ie, no temporary arrays)
+\item Avoid pure matlab (matlab's \texttt{fft} is written in C)
+\item DFT's lower bound not known, but many results pointing to $DFT \in \Omega(n \log(n))$
+\end{itemize}
+\end{myframe}
+
+\begin{myframe}{FFT: Bigger base case}
+\centering
+\lstinputlisting[basicstyle=\small\ttfamily]{code/facuft_basecase.m}
+\end{myframe}
+
+\begin{myframe}{FFT: Empirical running time}
+\centering
+\includegraphics[height=200pt]{img/running_time_basecase}
+\end{myframe}

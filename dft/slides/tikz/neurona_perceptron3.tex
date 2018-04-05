@@ -1,0 +1,46 @@
+%\documentclass{standalone}
+%\usepackage{tikz}
+%\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+
+%\begin{document}
+    \tikzstyle{every node}=[font=\large]
+
+\begin{tikzpicture}[
+plain/.style={
+  draw=none,
+  fill=none,
+  },
+net/.style={
+  matrix of nodes,
+  nodes={
+    draw,
+    circle,
+    inner sep=10pt
+    },
+  nodes in empty cells,
+  column sep=2cm,
+  row sep=4pt
+  },
+>=latex
+]
+\matrix[net] (mat)
+{
+$x$ & |[plain]| \\
+$y$ & $ f$ \\
+$z$ & |[plain]| \\
+};
+
+%\draw[<-] (mat-1-1) -- node[above left] {x} +(-2cm,0);
+%\draw[<-] (mat-3-1) -- node[above left] {y} +(-2cm,0);
+
+
+\draw[->] (mat-1-1) --  node[below] {$w_x$} (mat-2-2);
+\draw[->] (mat-2-1) -- node[below] {$w_y$} (mat-2-2);
+\draw[->] (mat-3-1) -- node[below] {$w_z$} (mat-2-2);
+    
+\draw[->] (mat-2-2) -- node[right] {$\; f=signo(w_x x + w_y y+ w_z z + b)$} +(1.2cm,0);
+
+\end{tikzpicture}
+
+
+%\end{document}

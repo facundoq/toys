@@ -1,0 +1,35 @@
+
+\begin{tikzpicture}[level/.style={sibling distance=60mm/#1}]
+
+\node [circle,draw] (z){$F_N$}
+  child {node [circle,draw] (a) {$F_{\frac{N}{2}}$}
+    child {node [circle,draw] (b) {$F_{\frac{N}{2^2}}$}
+      child {node {$\vdots$}
+        child {node [circle,draw] (d) {$F_{\frac{N}{2^k}}$}}
+        child {node [circle,draw] (e) {$F_{\frac{N}{2^k}}$}}
+      } 
+      child {node {$\vdots$}}
+    }
+    child {node [circle,draw] (g) {$F_{\frac{N}{2^2}}$}
+      child {node {$\vdots$}}
+      child {node {$\vdots$}}
+    }
+  }
+  child {node [circle,draw] (j) {$F_{\frac{N}{2}}$}
+    child {node [circle,draw] (k) {$F_{\frac{N}{2^2}}$}
+      child {node {$\vdots$}}
+      child {node {$\vdots$}}
+    }
+    child {node [circle,draw] (l) {$F_{\frac{N}{2^2}}$}
+        child {node {$\vdots$}}
+        child {node (c){$\vdots$}
+          child {node [circle,draw] (o) {$F_{\frac{N}{2^k}}$}}
+          child {node [circle,draw] (p) {$F_{\frac{N}{2^k}}$}
+          }
+        }
+    }
+  }    
+;
+\path (o) -- (e) node (x) [midway] {$\cdots$};
+
+\end{tikzpicture}

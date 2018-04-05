@@ -1,0 +1,251 @@
+
+%drawing
+
+
+
+% AXIS
+
+\newcommand{\correctaxiscenter}{
+\pgfplotsset{
+    standard/.style={
+        axis x line=middle,
+        axis y line=middle,
+        enlarge x limits=0.15,
+        enlarge y limits=0.15,
+        every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+        every axis y label/.style={at={(current axis.above origin)},anchor=north east}
+    }
+}
+}
+
+\newcommand{\axishundred}{xmin=-100,xmax=100,ymin=-100,ymax=100}
+\newcommand{\axisten}{xmin=-10,xmax=10,ymin=-10,ymax=10}
+\newcommand{\axisunit}{xmin=-1,xmax=1,ymin=-1,ymax=1}
+\newcommand{\axissquare}[1]{xmin=-#1,xmax=#1,ymin=-#1,ymax=#1}
+\newcommand{\axisrectangular}[2]{xmin=-#1,xmax=#1,ymin=-#2,ymax=#2}
+
+
+\newcommand{\drawaxiss}[1]{
+\draw [<->] (-#1,0) -- (#1,0);
+\draw [<->] (0,-#1) -- (0,#1);
+}
+
+\newcommand{\myaxis}[2][]{
+\begin{axis}[#1,anchor=origin, x=1cm, y=1cm]  % Align the origins
+#2    
+\end{axis}
+}
+\newcommand{\rectangularaxis}[4][]{
+\myaxis[\axisrectangular{#3}{#4},#1]{#2}
+}
+
+
+\newcommand{\squareaxis}[3][]{
+\myaxis[\axissquare{#3},#1]{#2}
+}
+
+\newcommand{\standardaxis}[2][]{
+\myaxis[\axisten,#1]{#2}
+}
+
+\newcommand{\configureDiscard}{}
+
+\newcommand{\resultsaxis}[3][]{
+\correctaxiscenter
+\configureDiscard
+
+\pgfplotsset{
+%    every axis/.append style={font=\small}  
+}
+
+\myaxis[legend pos=south east, every node near coord/.append style={font=\huge},ylabel=cc,xlabel=#3,#1,ytick={0,25,50,75,100}]{#2}
+}
+
+\newcommand{\addplotresults}[6]{
+\addplot+[selecting={#1}{#2},#6] table[x index=#3, y index=#4,col sep=comma] {datos/#5};
+\addlegendentry{$#1 = {#2}$};
+}
+
+
+%GAUSSIAN
+
+\pgfmathdeclarefunction{invgauss}{2}{%
+  \pgfmathparse{sqrt(-2*ln(#1))*cos(deg(2*pi*#2))}%
+}
+\newcommand{\addplotgaussian}[3]{
+\addplot [only marks, samples=#1] ({invgauss(rnd,rnd)+#2},{invgauss(rnd,rnd)}+#3);
+}
+
+\newcommand{\addgaussianscatter}[4][30]{
+\addplot [only marks, mark=#2,samples=#1] ({invgauss(rnd,rnd)+#3},{invgauss(rnd,rnd)+#4});
+}
+
+
+%aprendizaje
+
+%areas
+
+
+\newcommand{\classcircle}[3]{\draw [ultra thick, fill={rgb:black,1;white,20}] (#1,#2) circle [radius=#3]
+}
+
+\newcommand{\classcirclename}[3]{\classcircle{#1}{#2}{4};
+\node [above] at (#1,#2+4) {#3};
+}
+
+
+\newcommand{\classcirclenamelittle}[2]{
+\classcircle{#1}{#2}{3.3};
+}
+
+
+\newcommand{\tresclases}{
+\classcirclename{0}{4}{Clase 1};
+\classcirclename{-5}{-4}{Clase 2};
+\classcirclename{5}{-4}{Clase 3};
+}
+
+
+\newcommand{\tresclasessmall}{
+\classcirclenamelittle{0}{2.5};
+\classcirclenamelittle{-5}{-2.5};
+\classcirclenamelittle{5}{-2.5};
+}
+
+
+%scatter plots
+
+\newcommand{\simmetricgaussianscatter}[4][50]{
+\addgaussianscatter[#1]{#2}{#3}{#4}
+\addgaussianscatter[#1]{#2}{#3}{-#4}
+\addgaussianscatter[#1]{#2}{-#3}{-#4}
+\addgaussianscatter[#1]{#2}{-#3}{#4}
+}
+
+
+\newcommand{\datosclase}[5][50]{
+\addgaussianscatter[#1]{#2}{#3}{#4}
+%\addlegendentry{Clase #5};
+}
+
+
+\newcommand{\datostresclases}{
+\datosclase{o}{0}{2.5}{1}
+\datosclase{triangle}{-5}{-2.5}{2}
+\datosclase{diamond}{5}{-2.5}{3}
+}         
+
+\newcommand{\datosdosclasessinpintar}{
+\addgaussianscatter{o}{-5}{2}
+\addgaussianscatter{o}{5}{-2}
+}
+
+\newcommand{\datosdosclases}{
+\addgaussianscatterpositive{-5}{2}
+\addgaussianscatternegative{5}{-2}
+}
+
+\newcommand{\datosdosclasesinvisible}{
+\addgaussianscattermarkercolor{o}{black}{-5}{2}
+\addgaussianscattermarkercolor{o}{black}{5}{-2}
+}
+
+\newcommand{\datosnoseparable}{
+\addgaussianscatterpositive{5}{2}
+\addgaussianscatterpositive{3}{4}
+\addgaussianscatternegative{3}{5}
+\addgaussianscatternegative{2}{6}
+}
+
+\newcommand{\datosdosclasescruzadas}{
+\addgaussianscatterpositive{4}{4}
+\addgaussianscatternegative{-4}{4}
+\addgaussianscatternegative{4}{-4}
+\addgaussianscatterpositive{-4}{-4}
+}
+
+
+\newcommand{\datosnolineal}{
+\addgaussianscatterpositive{-5}{2}
+\addgaussianscatterpositive{0}{3}
+\addgaussianscatterpositive{-2}{3}
+\addgaussianscatterpositive{-5}{-4}
+\addgaussianscatterpositive{-4}{-1}
+
+\addgaussianscatternegative{2.5}{-3}
+\addgaussianscatternegative{5}{-2}
+\addgaussianscatternegative{0}{-4}
+\addgaussianscatternegative{1}{-3.2}
+\addgaussianscatterpositive{4}{4}
+}
+
+
+\newcommand{\addgaussianscattermarkercolor}[5][30]{
+\addplot [only marks, mark=#2,mark options={#3},samples=#1] ({invgauss(rnd,rnd)+#4},{invgauss(rnd,rnd)+#5});
+}
+
+\newcommand{\addgaussianscatterpositive}[2]{
+\addgaussianscattermarkercolor{o}{positive}{#1}{#2}
+}
+
+\newcommand{\addgaussianscatternegative}[2]{
+\addgaussianscattermarkercolor{o}{negative}{#1}{#2}
+}
+
+
+\newcommand{\addgaussianscattermarkercolort}[6][30]{
+\addplot3[only marks, mark=#2,mark options={#3},samples=#1] ({invgauss(rnd,rnd)+#4},{invgauss(rnd,rnd)+#5},{invgauss(rnd,rnd)+#6});
+}
+
+
+\newcommand{\addgaussianscatterpositivet}[3]{
+\addgaussianscattermarkercolort{o}{positive}{#1}{#2}{#3}
+}
+
+\newcommand{\addgaussianscatternegativet}[3]{
+\addgaussianscattermarkercolort{o}{negative}{#1}{#2}{#3}
+}
+
+
+\newcommand{\datosdosclasesnolineal}{
+\addgaussianscatterpositive{-5}{2}
+\addgaussianscatterpositive{0}{3}
+\addgaussianscatterpositive{-5}{-4}
+\addgaussianscatterpositive{-4}{-1}
+\addgaussianscatternegative{2.5}{-3}
+\addgaussianscatternegative{5}{-1}
+\addgaussianscatternegative{0}{-4}
+\addgaussianscatternegative{1}{-3.2}
+}
+
+\newcommand{\classp}{oplus}
+\newcommand{\classm}{halfcircle}
+
+
+\newenvironment{neuralnetwork}{
+
+\begin{tikzpicture}[
+plain/.style={
+  draw=none,
+  fill=none,
+  },
+net/.style={
+  matrix of nodes,
+  nodes={
+    draw,
+    circle,
+    inner sep=10pt
+    },
+  nodes in empty cells,
+  column sep=2cm,
+  row sep=4pt
+  },
+>=latex
+]
+}{
+\end{tikzpicture}
+}
+
+
+\definecolor{pbblue}{HTML}{0A75A8}% filling color for the progress bar
+\definecolor{pbgray}{HTML}{575757}% background color for the progress bar

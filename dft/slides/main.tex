@@ -1,0 +1,52 @@
+% Luebeck-default-default: buen outline arriba, lindos numeros/itemize, feo que se ve abajo el autor
+% ilmenau: como Darmstadt pero más ordenado arriba y más feo
+% Darmstadt: bueno pero son feos los itemize
+
+\documentclass[
+%aspectratio=169,
+aspectratio=43,
+hyperref={pdfpagelabels=false},
+x  color={tables}]{beamer}
+
+
+\input{tex/packages}
+\input{tex/config_listings}
+\input{tex/title}
+\input{tex/commands}
+\input{tikz/tikz_commands}
+%\input{tex/esquemas}
+
+\usefonttheme[onlymath]{serif}
+
+\setbeamertemplate{footline}{}
+
+
+\begin{document}
+
+
+\input{tex/tikz}
+
+\begin{myframe}
+\titlepage
+\end{myframe} 
+% TODO 
+% 1 DFT COMPUTATION SCHEME ***DONE***
+% 2 FFT RECURSION TREE ***DONE***
+% 3 FFT RECURSION TREE + COMPLEXITY ***DONE***
+% 4 FFT EMPIRICAL RUNNING TIME ! ***DONE***
+% 5 FFT IMPROVEMENTS ! ***DONE***
+% 6 FFT Bigger Base Case !  ***DONE***
+% 7 MATRIX  Show FULL Matrix
+% 8 MATRIX FFT REVIEW ***DONE***
+% 9 MATRIX FACTORIZATION
+% 10 MATRIX ITERATIVE ***DONE***
+% 11 MATRIX IMPLEMENTATION ***DONE***
+% 12 MATRIX EMPIRICAL RUNNING TIME ***DONE***
+% 13 RE-DO PLOTS IN MATLAB RUNNING TIME
+% 14 SOLVING RECURRENCE INVISIBLE -> REMOVE ***DONE***
+
+\input{tex/dft}
+\input{tex/fft}
+\input{tex/matrixfft}
+
+\end{document}

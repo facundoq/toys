@@ -1,0 +1,45 @@
+%\documentclass{standalone}
+%\usepackage{tikz}
+%\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+
+%\begin{document}
+    \tikzstyle{every node}=[font=\large]
+
+\begin{tikzpicture}[
+plain/.style={
+  draw=none,
+  fill=none,
+  },
+net/.style={
+  matrix of nodes,
+  nodes={
+    draw,
+    circle,
+    inner sep=10pt
+    },
+  nodes in empty cells,
+  column sep=3cm,
+  row sep=40pt
+  },
+>=latex
+]
+\matrix[net] (mat)
+{
+$x$ & $ f^1 $ \\
+$y$ &  $ f^2 $ \\
+};
+
+\draw[->] (mat-1-1) -- node[above] {$w_x^1$} (mat-1-2);
+\draw[->] (mat-2-1) -- node[above] {$w_y^1$} (mat-1-2);
+
+\draw[->] (mat-1-1) -- node[below] {$w_x^2$} (mat-2-2);
+\draw[->] (mat-2-1) -- node[below] {$w_y^2$} (mat-2-2);
+
+\draw[->] (mat-1-2) -- node[above right] {$f^1$} +(1.5cm,0);
+    
+\draw[->] (mat-2-2) -- node[above right] {$f^2$} +(1.5cm,0);
+
+\end{tikzpicture}
+
+
+%\end{document}

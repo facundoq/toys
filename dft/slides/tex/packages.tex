@@ -1,0 +1,58 @@
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,spanish]{babel}
+
+\usepackage{inconsolata}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.arrows,shapes,decorations,positioning,matrix,chains,decorations.pathreplacing,arrows}
+
+\usepackage{listings}
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\usepackage{pgffor}
+\usepackage{pgfplots}
+\pgfplotsset{
+compat=1.6,
+every axis/.append style={font=\small}  
+}
+
+\usepackage{tabulary}
+%\usepackage[table]{xcolor}
+\usepackage{colortbl}
+
+\usepackage{amssymb}
+\usepackage{lmodern}
+
+\usetheme{Boadilla}
+\usecolortheme{dolphin}
+\setbeamertemplate{footline}[frame number]
+
+
+\useinnertheme{rectangles} % rectangles for itemize and enumerate
+
+\beamertemplatenavigationsymbolsempty 
+
+%\unaccentedoperators
+\usefonttheme{professionalfonts}
+% Absolute positioning
+%\usepackage[absolute,overlay]{textpos}
+%  \setlength{\TPHorizModule}{1mm}
+%  \setlength{\TPVertModule}{1mm}
+
+% usage:  \begin{textblock}{*width*}(*x-position,y-position*)
+%\begin{textblock}{20}(40,20)
+%      \includegraphics{file}
+%    \end{textblock}
+
+
+% abs pos with tikz
+%\begin{tikzpicture}[remember picture,overlay]
+%  \node[anchor=south west,inner sep=0pt] at ($(current page.south west)+(2cm,5cm)$) {
+%     \includegraphics{imgfile}
+%  };
+%\end{tikzpicture}

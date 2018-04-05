@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="FlightReservationsTestClients/stressTestRunner.jar"/>
+    <options buildIfNeeded="true" compress="false" descriptionLocation="/FlightReservationsTestClients/stressTestRunner.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" mainClassHandleIdentifier="=FlightReservationsTestClients/src&lt;org.flightreservationsclient.main{StressTestRunner.java[StressTestRunner" manifestLocation="/FlightReservationsTestClients/stressTestRunner.manifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=FlightReservationsServerInterface"/>
+        <javaElement handleIdentifier="=FlightReservationsTestClients"/>
+        <javaElement handleIdentifier="=StressTestManagerInterface"/>
+    </selectedElements>
+    <fatjar builder="org.eclipse.jdt.ui.plain_jar_builder" launchConfig=""/>
+</jardesc>

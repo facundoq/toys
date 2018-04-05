@@ -1,0 +1,39 @@
+\tikzstyle{every node}=[font=\large]
+
+
+\begin{neuralnetwork}
+\matrix[net] (mat)
+{
+$x$ & |[plain]| \\
+|[plain]| &  $ f(x,y) $ \\
+$y$ & |[plain]| \\
+};
+\draw[->] (mat-1-1) --  node[below] {$w_x$} (mat-2-2);
+\draw[->,ultra thick] (mat-3-1) -- node[below] {$w_y$} (mat-2-2);
+    
+\draw[->] (mat-2-2) -- node[above right] {$f(x,y)=signo(w_x x + w_y y + b)$} +(3cm,0);
+
+\end{neuralnetwork}
+
+
+
+\begin{columns}
+\begin{column}{0.3\textwidth} \end{column}
+\begin{column}{0.2\textwidth}
+\centering
+\begin{block}{\centering Error}
+\centering
+ \begin{tikzpicture}[rounded corners=2pt,very thin]
+
+    %\shade[top color=pbgray!20,bottom color=pbgray!20,middle color=pbgray!50] (0pt, 0pt) rectangle ++ (1, 2);
+
+ \shade[draw=pbblue,top color=red!70,bottom color=red!70,middle color=red!70] (0pt, 0pt) rectangle ++ (1, 1.7);
+
+    \draw[color=normal text.fg!50]  
+      (0pt, 0pt) rectangle (1,2) 
+        node[pos=0.5,color=normal text.fg] {};
+  \end{tikzpicture}
+  \end{block}  
+\end{column}
+\begin{column}{0.3\textwidth}\end{column}
+\end{columns}

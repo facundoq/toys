@@ -1,0 +1,110 @@
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+\begin{axis}[xlabel={Amplitud},ylabel={Duración}, yticklabels={,,},xticklabels={,,},]
+\datosnoseparable
+\node[color=surface] at (axis cs:1,1) { {\Huge ¿¿¿???} };
+\end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}
+   \begin{axis}[samples=20,yticklabels={,,},xticklabels={,,},zticklabels={,,},xlabel={Duración},ylabel={Amplitud},zlabel={Pendiente}]
+   
+    \addplot3[color=white, domain=-4:4] {-7*x-14*y+10};
+     
+     \addplot3[only marks, mark=o,mark options={negative},samples=10] ({invgauss(rnd,rnd)+2},{invgauss(rnd,rnd)+2},{invgauss(rnd,rnd)+2});
+     
+     \addplot3[only marks, mark=o,mark options={positive},samples=10] ({invgauss(rnd,rnd)-2},{invgauss(rnd,rnd)-2},{invgauss(rnd,rnd)-20});
+
+   \end{axis}
+\end{tikzpicture}
+}
+\end{myframe}
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+
+\begin{tikzpicture}
+   \begin{axis}[samples=20,yticklabels={,,},xticklabels={,,},zticklabels={,,},
+   xlabel={Duración},ylabel={Amplitud},zlabel={Pendiente}]
+     \addplot3[surf, domain=-4:4] {-7*x-14*y+10};
+
+     \addplot3[only marks, mark=o,mark options={negative},samples=10] ({invgauss(rnd,rnd)+2},{invgauss(rnd,rnd)+2},{invgauss(rnd,rnd)+2});
+     
+     \addplot3[only marks, mark=o,mark options={positive},samples=10] ({invgauss(rnd,rnd)-2},{invgauss(rnd,rnd)-2},{invgauss(rnd,rnd)-20});
+
+   \end{axis}
+\end{tikzpicture}
+}
+
+\end{myframe}
+
+\begin{myframe}    
+\centering
+\input{tikz/neurona_perceptron3}
+\end{myframe}
+
+
+
+\begin{myframe}
+\pgfmathsetseed{1}
+\centering
+\resizebox{1\textwidth}{!}{
+\begin{tikzpicture}[]
+
+  \node[draw,text width=3cm,align=center] (x1) at (0,0) {
+    Espacio de la capa 1\\
+    (de entrada)
+  };
+  \node[draw,text width=3cm,align=center] (x2) at (4,-2) {
+      Espacio de la capa 1
+      (oculta)
+  };
+  
+  \node[draw,minimum height=1cm,text width=3cm,align=center] (x3) at (8,-4) {
+        $\dots$
+   };
+  
+    \node[draw,text width=3cm,align=center] (x4) at (12,-6) {
+        Espacio de la capa N-1
+        (oculta)
+    };
+     
+\node[draw,text  width=3cm,align=center] (x5) at (16,-8) {
+           Espacio de la capa N 
+            (de salida)
+    };
+    
+   \draw[->,very thick] (x1) to node[above right] {$T_1:: A \rightarrow B$} (x2);
+    \draw[->,very thick] (x2) to node[above right] {$T_2
+    :: B \rightarrow C$} (x3);
+    \draw[->,very thick] (x3) to node[above right] {$T_{N-2} ::X \rightarrow Y $} (x4);
+    \draw[->,very thick] (x4) to node[above right] {$T_{N-1}  :: Y  \rightarrow Z $} (x5);
+
+
+\end{tikzpicture}
+}
+%\pause
+\vspace{-4px}
+\begin{block}{\centering Aprendizaje Automático = Estadística + Esteroides}
+\centering
+\begin{itemize}
+\centering
+\item Más \textbf{potencia} para encontrar asociaciones
+\item PERO son modelos de \textbf{caja negra}
+\end{itemize}
+\end{block}
+\end{myframe}

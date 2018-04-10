@@ -10,6 +10,7 @@ Small programming projects
 * gest: Gesture Recognition w/ Kinect 1 (c#, various algorithms)
 * julia-rotate: basic image rotation algorithms in Julia
 * hog: pure Python/Numpy visualization of [Histogram of Oriented Gradients](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients) [paper](https://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf)
+* pedestrian_detection: added pedestrian detection sample pipeline with python/numpy/skimage/hogs/svm/sklearn for dataset Daimler Mono.
 * mazes: various maze generation algorithms in Scala/ScalaJS. [Demo](http://facundoq.github.io/mazes/)
 * pca: example on how to use pca to reconstruct missing data (w/ 3D synthetic generated data). Also comparison with linear regression. Using python, numpy and sklearn.
 * random_image: testing simple image generation schemes

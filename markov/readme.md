@@ -10,3 +10,5 @@ Sample output, trained with 3 states (2 previous + 1predicted) 70mb of text (149
     
 ` Who take the old days " notice , and Finest Sea Salt , Paprika ( Bell Pepper ) , and logging , it will be able to obtain access to the east and the world , accept that the policies we must enter the aerospace engineering degrees -- unprecedented mobility for African American adults who were in front of the changes in property damage along New Jersey as it exists , and A. ticks were most likely scenario is based on the threefold workings of the actors know it was 
 `
+
+Sample usage: see `main_words.py` and `main_chars.py`

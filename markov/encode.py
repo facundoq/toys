@@ -69,14 +69,14 @@ def text2words(text:str,delimiter:str):
         words = line.split(delimiter)
         for w in words:
             yield w
-        yield("\n")
+        #yield("\n")
 
 class WordEncoder(Encoder):
 
     @classmethod
     def fit(cls,text:str,min_appearances=1,delimiter=" "):
         word_count=dict()
-        word_count["\n"]=min_appearances
+        word_count["\n"]=0#min_appearances
         for word in text2words(text,delimiter):
             count = word_count.get(word,0)
             count+=1
